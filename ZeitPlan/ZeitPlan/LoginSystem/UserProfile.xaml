@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZeitPlan.Views.Admin.UserProfile"
+             Title="User Profile">
+    <ContentPage.Content>
+        <StackLayout Padding="24">
+            <Grid  ColumnDefinitions="150*,400*" RowDefinitions="50,50,50,50,50,50">
+                <Label Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#bd6513" Text="UserList" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                
+                <Label Grid.Row="1" Grid.Column="0"  BackgroundColor="#bd6513" Text="UserId" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                <Label Grid.Row="1" Grid.Column="1" x:Name="lblID" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+                <Label Grid.Row="2" Grid.Column="0" BackgroundColor="#bd6513" Text="Name" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                <Label Grid.Row="2" Grid.Column="1" x:Name="lblName" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+
+                <Label Grid.Row="3" Grid.Column="0" BackgroundColor="#bd6513" Text="Email" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                <Label Grid.Row="3" Grid.Column="1" x:Name="lblEmail" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+
+                <Label Grid.Row="4" Grid.Column="0" BackgroundColor="#bd6513" Text="phone" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="4" Grid.Column="1" x:Name="lblPhone" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+                <Label Grid.Row="5" Grid.Column="0" BackgroundColor="#bd6513" Text="Password" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Row="5" Grid.Column="1" x:Name="lblPassword" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

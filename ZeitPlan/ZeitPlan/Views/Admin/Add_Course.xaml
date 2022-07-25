@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZeitPlan.Views.Admin.Add_Course">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="txtCOName" Placeholder="Course Name" Keyboard="Chat"/>
+            <Entry x:Name="txtCOCredit_Hours" Placeholder="Credit Hours" Keyboard="Numeric"/>
+            <Entry x:Name="txtCODegreeFID" Placeholder="DegreeFID" Keyboard="Numeric"/>
+            <Entry x:Name="txtCOTBL_Course_AssignFID" Placeholder="TBL Course_AssignFID" Keyboard="Numeric"/>
+            <Entry x:Name="txtCOTBL_DegreeFID" Placeholder="TBL DegreeFID " Keyboard="Numeric"/>
+            <Button Text="Add Course" x:Name="btnCourse" Clicked="btnCourse_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

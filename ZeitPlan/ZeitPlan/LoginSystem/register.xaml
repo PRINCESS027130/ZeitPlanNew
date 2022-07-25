@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZeitPlan.LoginSystem.register"
+             Title="register">
+    <ContentPage.Content>
+        <StackLayout Padding="24" VerticalOptions="Center">
+
+            <Entry IsTextPredictionEnabled="True" Keyboard="Chat" Placeholder="Name" x:Name="txtName"/>
+            <Entry Keyboard="Numeric" Placeholder="Phone" x:Name="txtPhone"/>
+            <Entry Keyboard="Email" Placeholder="Email" x:Name="txtEmail"/>
+            <Entry IsPassword="True" Placeholder="Password" x:Name="txtPassword"/>
+            <Entry IsPassword="True" Placeholder=" Confirm Password" x:Name="txtCPassword"/>
+            <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>
+            <Button Text="Register" Clicked="Button_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

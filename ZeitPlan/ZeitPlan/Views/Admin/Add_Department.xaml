@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZeitPlan.Views.Admin.Add_Department">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="txtDName" Placeholder="Department Name" Keyboard="Chat"/>
+            <Entry x:Name="txtDTBL_DegreeFID" Placeholder="TBL_DegreeFID" Keyboard="Numeric"/>
+            <Entry x:Name="txtDTBL_RoomFID" Placeholder="TBL_RoomFID" Keyboard="Numeric"/>
+            <Entry x:Name="txtDTBL_TeacherFID" Placeholder="TBL_TeacherFID" Keyboard="Numeric"/>
+            <Button Text="Add Department" x:Name="btnDepartment" Clicked="btnDepartment_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

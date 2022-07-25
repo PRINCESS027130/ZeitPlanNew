@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZeitPlan.StartPage" Background="white">
+    <ContentPage.Content>
+        <StackLayout Padding="24" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Image Source="ic_zp_gen_brown.png"/>
+            <Label HorizontalOptions="CenterAndExpand" TextColor="black" FontSize="18" Text="ZeitPlan"/>
+            <Label HorizontalOptions="CenterAndExpand" TextColor="black" FontSize="11" Text="Time is more important" Margin="0,0,0,0"/>
+            <Button Text="Get Started" BorderWidth="1.5" CornerRadius="50" BorderColor="#bd6513" BackgroundColor="Transparent" TextColor="black" x:Name="btnGetStarted" Clicked="btnGetStarted_Clicked"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Label HorizontalOptions="CenterAndExpand" TextColor="black" Text="Admin">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="btnAdmin" Tapped="btnAdmin_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="|" TextColor="Black"/>
+                <Label HorizontalOptions="CenterAndExpand" TextColor="black" Text="Teacher">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="Teacher" Tapped="Teacher_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="|" TextColor="Black"/>
+                <Label HorizontalOptions="CenterAndExpand" TextColor="black" Text="student">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="Student" Tapped="Student_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="|" TextColor="Black"/>
+                <Label HorizontalOptions="CenterAndExpand" TextColor="black" Text="Reset Defaults">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

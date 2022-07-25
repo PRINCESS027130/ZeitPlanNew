@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZeitPlan.Views.Admin.Add_Class">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="txtCSession" Placeholder="Session" Keyboard="Numeric"/>
+            <Entry x:Name="txtCSection" Placeholder="Section" Keyboard="Chat"/>
+            <Entry x:Name="txtCShift" Placeholder="Shift" Keyboard="Chat"/>
+            <Entry x:Name="txtCDegreeFID" Placeholder="Session" Keyboard="Numeric"/>
+            <Entry x:Name="txtCTblDegreeFID" Placeholder="Session" Keyboard="Numeric"/>
+            <Entry x:Name="txtCTblStudentFID" Placeholder="Session" Keyboard="Numeric"/>
+            <Entry x:Name="txtCTblTimeTableFID" Placeholder="Session" Keyboard="Numeric"/>
+            <Button Text="Add Class" x:Name="btnClass" Clicked="btnClass_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

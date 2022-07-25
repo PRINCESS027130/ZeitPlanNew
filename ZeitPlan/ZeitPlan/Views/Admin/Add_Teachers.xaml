@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZeitPlan.Views.Admin.Add_Teachers"
+             Title="Add Teachers">
+    <ContentPage.Content>
+        <StackLayout Padding="24">
+            <Image x:Name="PreviewPic" Source="image_picker.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+                
+                    <Entry x:Name="txtTeName" Placeholder="Teacher Name" Keyboard="Chat"/>
+            <Entry x:Name="txtTeEmail" Placeholder="Teacher Email" Keyboard="Email"/>
+            <Entry x:Name="txtTePhone" Placeholder="Teacher Phone" Keyboard="Numeric"/>
+            <Entry x:Name="txtTePassword" Placeholder="Teacher Password" IsPassword="True"/>
+            <Entry x:Name="txtTeAddress" Placeholder="Teacher Address" Keyboard="Chat"/>
+            <Button Text="Add Teacher" x:Name="btnTeacher" Clicked="btnTeacher_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
