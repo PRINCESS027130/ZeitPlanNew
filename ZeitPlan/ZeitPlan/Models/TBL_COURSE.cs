@@ -16,8 +16,7 @@
         public int DEGREE_FID { get; set; }
 
         
-        public int TBL_COURSE_ASSIGNFID { get; set; }
+        public int COURSE_ASSIGNFID { get; set; }
 
-        public int TBL_DEGREEFID { get; set; }
     }
 

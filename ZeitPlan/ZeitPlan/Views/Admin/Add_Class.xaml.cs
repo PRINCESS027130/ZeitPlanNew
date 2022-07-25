@@ -21,7 +21,7 @@ namespace ZeitPlan.Views.Admin
         {
             try
             {
-                if (string.IsNullOrEmpty(txtCSession.Text) || string.IsNullOrEmpty(txtCSection.Text) || string.IsNullOrEmpty(txtCShift.Text) || string.IsNullOrEmpty(txtCDegreeFID.Text) || string.IsNullOrEmpty(txtCTblStudentFID.Text) || string.IsNullOrEmpty(txtCTblTimeTableFID.Text))
+                if (string.IsNullOrEmpty(txtCSession.Text) || string.IsNullOrEmpty(txtCSection.Text) || string.IsNullOrEmpty(txtCShift.Text) || string.IsNullOrEmpty(txtCDegreeFID.Text) || string.IsNullOrEmpty(txtCStudentFID.Text) || string.IsNullOrEmpty(txtCTimeTableFID.Text))
                 {
                     await DisplayAlert("ERROR", "Please fill the required field", "ok");
                     return;
@@ -37,9 +37,8 @@ namespace ZeitPlan.Views.Admin
                     SECTION = txtCSection.Text,
                     SHIFT = txtCShift.Text,
                     DEGREE_FID = int.Parse(txtCDegreeFID.Text),
-                    TBL_DEGREEFID = int.Parse(txtCTblDegreeFID.Text),
-                    TBL_STUDENTFID = int.Parse(txtCTblStudentFID.Text),
-                    TBL_TIMETABLEFID = int.Parse(txtCTblTimeTableFID.Text)
+                    STUDENTFID = int.Parse(txtCStudentFID.Text),
+                   TIMETABLEFID = int.Parse(txtCTimeTableFID.Text)
                 };
 
                 App.db.Insert(cl);

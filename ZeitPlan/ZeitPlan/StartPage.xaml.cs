@@ -31,7 +31,7 @@ namespace ZeitPlan
 
         private void btnAdmin_Tapped(object sender, EventArgs e)
         {
-            App.Current.MainPage = new login("Admin");
+            App.Current.MainPage = new NavigationPage( new login("Admin"));
         }
 
         private void Student_Tapped(object sender, EventArgs e)

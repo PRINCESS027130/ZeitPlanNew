@@ -7,8 +7,8 @@
             <Entry x:Name="txtCOName" Placeholder="Course Name" Keyboard="Chat"/>
             <Entry x:Name="txtCOCredit_Hours" Placeholder="Credit Hours" Keyboard="Numeric"/>
             <Entry x:Name="txtCODegreeFID" Placeholder="DegreeFID" Keyboard="Numeric"/>
-            <Entry x:Name="txtCOTBL_Course_AssignFID" Placeholder="TBL Course_AssignFID" Keyboard="Numeric"/>
-            <Entry x:Name="txtCOTBL_DegreeFID" Placeholder="TBL DegreeFID " Keyboard="Numeric"/>
+            <Entry x:Name="txtCOCourseAssignFID" Placeholder="Course_AssignFID" Keyboard="Numeric"/>
+            <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>
             <Button Text="Add Course" x:Name="btnCourse" Clicked="btnCourse_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

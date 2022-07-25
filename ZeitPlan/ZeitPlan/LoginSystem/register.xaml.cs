@@ -69,7 +69,7 @@ namespace ZeitPlan.LoginSystem
 
                  // App.db.Insert(u);
                  await DisplayAlert("Success", "Account registered", "ok");
-                await Navigation.PushAsync(new login(""));
+                App.Current.MainPage = new NavigationPage( new login(""));
 
             }
             catch (Exception ex)

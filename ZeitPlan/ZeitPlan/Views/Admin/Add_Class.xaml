@@ -7,10 +7,9 @@
             <Entry x:Name="txtCSession" Placeholder="Session" Keyboard="Numeric"/>
             <Entry x:Name="txtCSection" Placeholder="Section" Keyboard="Chat"/>
             <Entry x:Name="txtCShift" Placeholder="Shift" Keyboard="Chat"/>
-            <Entry x:Name="txtCDegreeFID" Placeholder="Session" Keyboard="Numeric"/>
-            <Entry x:Name="txtCTblDegreeFID" Placeholder="Session" Keyboard="Numeric"/>
-            <Entry x:Name="txtCTblStudentFID" Placeholder="Session" Keyboard="Numeric"/>
-            <Entry x:Name="txtCTblTimeTableFID" Placeholder="Session" Keyboard="Numeric"/>
+            <Entry x:Name="txtCDegreeFID" Placeholder="DegreeFID" Keyboard="Numeric"/>
+            <Entry x:Name="txtCStudentFID" Placeholder="StudentFID" Keyboard="Numeric"/>
+            <Entry x:Name="txtCTimeTableFID" Placeholder="TimeTableFID" Keyboard="Numeric"/>
             <Button Text="Add Class" x:Name="btnClass" Clicked="btnClass_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

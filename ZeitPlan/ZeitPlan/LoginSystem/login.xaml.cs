@@ -45,7 +45,7 @@ namespace ZeitPlan.LoginSystem
                 }
                 else
                 {
-                    await Navigation.PushAsync(new UsersList());
+                    App.Current.MainPage=  new UsersList();
                 }
 
                 if (type == "Admin")
@@ -65,7 +65,7 @@ namespace ZeitPlan.LoginSystem
             }
         }
 
-        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             App.Current.MainPage = new register();
         }
