@@ -17,6 +17,7 @@ namespace ZeitPlan.Views.Admin
             InitializeComponent();
              lblClassId.Text = Cl.CLASS_ID.ToString();
             lblSESSION.Text = Cl.SESSION;
+            lblSECTION.Text = Cl.SECTION;
             lblSHIFT.Text = Cl.SHIFT;
             lblDegreeFID.Text = Cl.DEGREE_FID.ToString();
             lblStudentFID.Text = Cl.STUDENTFID.ToString();
