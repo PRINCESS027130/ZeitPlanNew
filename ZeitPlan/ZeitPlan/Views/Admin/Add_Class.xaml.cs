@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Firebase.Database.Query;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,12 +28,27 @@ namespace ZeitPlan.Views.Admin
                     return;
                 }
 
-                App.db.CreateTable<TBL_CLASS>();
-                
+                //  App.db.CreateTable<TBL_CLASS>();
+                var check = (await App.firebaseDatabase.Child("TBL_CLASS").OnceAsync<TBL_CLASS>()).FirstOrDefault(x => x.Object.SESSION ==txtCSession.Text);
+                if (check != null)
+                {
+                    await DisplayAlert("ERROR", "Course is  already added", "ok");
+                    return;
+                }
+                LoadingInd.IsRunning = true;
+                int LastID, NewID = 1;
+
+                var LastRecord = (await App.firebaseDatabase.Child("TBL_CLASS").OnceAsync<TBL_CLASS>()).FirstOrDefault();
+                if (LastRecord != null)
+                {
+                    LastID = (await App.firebaseDatabase.Child("TBL_CLASS").OnceAsync<TBL_CLASS>()).Max(a => a.Object.CLASS_ID);
+                    NewID = ++LastID;
+                }
+
 
                 TBL_CLASS cl = new TBL_CLASS()
                 {
-
+                    CLASS_ID = NewID,
                     SESSION = txtCSession.Text,
                     SECTION = txtCSection.Text,
                     SHIFT = txtCShift.Text,
@@ -41,13 +57,17 @@ namespace ZeitPlan.Views.Admin
                    TIMETABLEFID = int.Parse(txtCTimeTableFID.Text)
                 };
 
-                App.db.Insert(cl);
+                //App.db.Insert(cl);
+                await App.firebaseDatabase.Child("TBL_CLASS").PostAsync(cl);
+
+                LoadingInd.IsRunning = false;
                 await DisplayAlert("Success", "Class Added", "ok");
 
 
             }
             catch (Exception ex)
             {
+                LoadingInd.IsRunning = false;
                 await DisplayAlert("Error", "Somethimg went wrong,Please try again later\nError:" + ex.Message, "ok");
 
             }

@@ -40,6 +40,30 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Admin\Class_Detail.xaml.cs">
+      <DependentUpon>Class_Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Admin\Room_detail.xaml.cs">
+      <DependentUpon>Room_detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Admin\Department_Detail.xaml.cs">
+      <DependentUpon>Department_Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Admin\Degree_Detail.xaml.cs">
+      <DependentUpon>Degree_Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Admin\Manage_Room.xaml.cs">
+      <DependentUpon>Manage_Room.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Admin\Manage_Department.xaml.cs">
+      <DependentUpon>Manage_Department.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Admin\Manage_Degree.xaml.cs">
+      <DependentUpon>Manage_Degree.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Admin\Manage_Class.xaml.cs">
+      <DependentUpon>Manage_Class.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Admin\Manage_Course.xaml.cs">
       <DependentUpon>Manage_Course.xaml</DependentUpon>
     </Compile>

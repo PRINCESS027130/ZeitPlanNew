@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Firebase.Database.Query;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,32 +22,51 @@ namespace ZeitPlan.Views.Admin
         {
             try
             {
-                if (string.IsNullOrEmpty(txtDName.Text) || string.IsNullOrEmpty(txtDTBL_DegreeFID.Text) || string.IsNullOrEmpty(txtDTBL_RoomFID.Text) || string.IsNullOrEmpty(txtDTBL_TeacherFID.Text))
+                if (string.IsNullOrEmpty(txtDepartmentName.Text) || string.IsNullOrEmpty(txtDDegreeFID.Text) || string.IsNullOrEmpty(txtDRoomFID.Text) || string.IsNullOrEmpty(txtDTeacherFID.Text))
                 {
                     await DisplayAlert("ERROR", "Please fill the required field", "ok");
                     return;
                 }
 
-                App.db.CreateTable<TBL_DEPARTMENT>();
+                // App.db.CreateTable<TBL_DEPARTMENT>();
+                var check = (await App.firebaseDatabase.Child("TBL_DEPARTMENT").OnceAsync<TBL_DEPARTMENT>()).FirstOrDefault(x => x.Object.DEPARTMENT_NAME == txtDepartmentName.Text);
+                if (check != null)
+                {
+                    await DisplayAlert("ERROR", "Degree is  already added", "ok");
+                    return;
+                }
+                LoadingInd.IsRunning = true;
+                int LastID, NewID = 1;
+
+                var LastRecord = (await App.firebaseDatabase.Child("TBL_DEPARTMENT").OnceAsync<TBL_DEPARTMENT>()).FirstOrDefault();
+                if (LastRecord != null)
+                {
+                    LastID = (await App.firebaseDatabase.Child("TBL_DEPARTMENT").OnceAsync<TBL_DEPARTMENT>()).Max(a => a.Object.DEPARTMENT_ID);
+                    NewID = ++LastID;
+                }
 
 
                 TBL_DEPARTMENT d = new TBL_DEPARTMENT()
                 {
-
-                    DEPARTMENT_NAME =txtDName.Text,
-                    TBL_DEGREEFID= int.Parse(txtDTBL_DegreeFID.Text),
-                    TBL_ROOMFID = int.Parse(txtDTBL_RoomFID.Text),
-                    TBL_TEACHERFID = int.Parse(txtDTBL_TeacherFID.Text),
+                    DEPARTMENT_ID= NewID,
+                    DEPARTMENT_NAME =txtDepartmentName.Text,
+                    DEGREEFID= int.Parse(txtDDegreeFID.Text),
+                    ROOMFID = int.Parse(txtDRoomFID.Text),
+                    TEACHERFID = int.Parse(txtDTeacherFID.Text),
 
                 };
 
-                App.db.Insert(d);
+                // App.db.Insert(d);
+                await App.firebaseDatabase.Child("TBL_DEPARTMENT").PostAsync(d);
+
+                LoadingInd.IsRunning = false;
                 await DisplayAlert("Success", "Department Added", "ok");
 
 
             }
             catch (Exception ex)
             {
+                LoadingInd.IsRunning = false;
                 await DisplayAlert("Error", "Somethimg went wrong,Please try again later\nError:" + ex.Message, "ok");
 
             }

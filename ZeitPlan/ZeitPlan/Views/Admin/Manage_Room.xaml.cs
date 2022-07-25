@@ -13,9 +13,9 @@ using ZeitPlan.Views.Admin;
 namespace ZeitPlan.Views.Admin
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Manage_Course : ContentPage
+    public partial class Manage_Room: ContentPage
     {
-        public Manage_Course()
+        public Manage_Room()
         {
             InitializeComponent();
             //try
@@ -48,21 +48,22 @@ namespace ZeitPlan.Views.Admin
 
         async void LoadData()
         {
-            DataList.ItemsSource = (await App.firebaseDatabase.Child("TBL_COURSE").OnceAsync<TBL_COURSE>()).Select(x => new TBL_COURSE
+            DataList.ItemsSource = (await App.firebaseDatabase.Child("TBL_ROOM").OnceAsync<TBL_ROOM>()).Select(x => new TBL_ROOM
             {
-                COURSE_ID = x.Object.COURSE_ID,
-                COURSE_NAME = x.Object.COURSE_NAME,
-                CREDIT_HOURS = x.Object.CREDIT_HOURS,
-                COURSE_ASSIGNFID = x.Object.COURSE_ASSIGNFID,
-                DEGREE_FID = x.Object.DEGREE_FID
+                ROOM_ID = x.Object.ROOM_ID,
+                ROOM_NO = x.Object.ROOM_NO,
+                DEPARTMENT_FID = x.Object.DEPARTMENT_FID,
+                TIMETABLE_FID = x.Object.TIMETABLE_FID,
+               
+               
 
             }).ToList();
         }
 
         private async void DataList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var selected = e.Item as TBL_COURSE;
-            var item = (await App.firebaseDatabase.Child("TBL_COURSE").OnceAsync<TBL_COURSE>()).FirstOrDefault(a => a.Object.COURSE_ID == selected.COURSE_ID);
+            var selected = e.Item as TBL_ROOM;
+            var item = (await App.firebaseDatabase.Child("TBL_ROOM").OnceAsync<TBL_ROOM>()).FirstOrDefault(a => a.Object.ROOM_ID == selected.ROOM_ID);
             var choice = await DisplayActionSheet("Option", "Cancel", "Delete", "Veiw", "Edit");
             if (choice=="Veiw")
             {
@@ -72,20 +73,20 @@ namespace ZeitPlan.Views.Admin
                 //"\nPassword : " + item.Object.Password+
                 //"\nPhone : " + item.Object.Phone,"Ok"
                 //);
-                await Navigation.PushAsync(new Course_Detail(selected));
+                await Navigation.PushAsync(new Room_Detail(selected));
             }
             if (choice=="Delete")
             {
-                var q = await DisplayAlert("Confirmation", "Are you want to delete this  " + item.Object.COURSE_NAME,"Yes","No");
+                var q = await DisplayAlert("Confirmation", "Are you want to delete this  " + item.Object.ROOM_NO,"Yes","No");
                 if (q)
                 {
                     //Delete Single Record =========================================================
-                    await App.firebaseDatabase.Child("TBL_COURSE").Child(item.Key).DeleteAsync();
+                    await App.firebaseDatabase.Child("TBL_ROOM").Child(item.Key).DeleteAsync();
 
                     //App.db.Delete(item);
                     // DataList.ItemsSource = App.db.Table<user>().ToList();
                     LoadData();
-                    await DisplayAlert("Confirmation", "Deleted Permanantly  " + item.Object.COURSE_NAME, "Ok");
+                    await DisplayAlert("Confirmation", "Deleted Permanantly  " + item.Object.ROOM_NO, "Ok");
                 }
             }
         }

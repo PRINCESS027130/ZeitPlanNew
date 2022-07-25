@@ -12,14 +12,13 @@
         public int DEPARTMENT_FID { get; set; }
 
        
-        public int TBL_CLASSFID { get; set; }
+        public int CLASSFID { get; set; }
 
         
-        public int TBL_COURSEFID { get; set; }
+        public int COURSEFID { get; set; }
 
         
-        public int TBL_COURSE_ASSIGNFID { get; set; }
+        public int COURSE_ASSIGNFID { get; set; }
 
-        public int TBL_DEPARTMENTFID { get; set; }
     }
 

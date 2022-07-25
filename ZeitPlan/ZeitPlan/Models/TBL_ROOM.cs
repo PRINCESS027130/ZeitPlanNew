@@ -13,9 +13,7 @@
 
         public int DEPARTMENT_FID { get; set; }
 
-        public int TBL_DEPARTMENTFID { get; set; }
-
         
-        public int TBL_TIMETABLEFID { get; set; }
+        public int TIMETABLE_FID { get; set; }
     }
 

@@ -10,6 +10,7 @@
             <Entry x:Name="txtCDegreeFID" Placeholder="DegreeFID" Keyboard="Numeric"/>
             <Entry x:Name="txtCStudentFID" Placeholder="StudentFID" Keyboard="Numeric"/>
             <Entry x:Name="txtCTimeTableFID" Placeholder="TimeTableFID" Keyboard="Numeric"/>
+            <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>
             <Button Text="Add Class" x:Name="btnClass" Clicked="btnClass_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

@@ -6,8 +6,8 @@
         <StackLayout>
             <Entry x:Name="txtRoom_No" Placeholder="Room No" Keyboard="Numeric" />
             <Entry x:Name="txtRDepartmentFID" Placeholder="DepartmentFID" Keyboard="Numeric" />
-            <Entry x:Name="txtRtblDepartmentFID" Placeholder="TBL_DepartmentFID" Keyboard="Numeric" />
-            <Entry x:Name="txtRtblTimeTableFID" Placeholder="TBL_TimeTableFID" Keyboard="Numeric" />
+            <Entry x:Name="txtRTimeTableFID" Placeholder="TBL_TimeTableFID" Keyboard="Numeric" />
+            <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>
             <Button Text="Add Room" x:Name="btnRoom" Clicked="btnRoom_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

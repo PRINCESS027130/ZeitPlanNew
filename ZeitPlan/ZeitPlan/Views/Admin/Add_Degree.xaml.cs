@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Firebase.Database.Query;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,33 +22,52 @@ namespace ZeitPlan.Views.Admin
         {
             try
             {
-                if (string.IsNullOrEmpty(txtDegName.Text) || string.IsNullOrEmpty(txtDegDepartmentFID.Text) || string.IsNullOrEmpty(txtDegTBL_ClassFID.Text) || string.IsNullOrEmpty(txtDegTBL_CourseAssignFID.Text) || string.IsNullOrEmpty(txtDegTBL_CourseFID.Text) || string.IsNullOrEmpty(txtDegTBL_DepartmentFID.Text))
+                if (string.IsNullOrEmpty(txtDegName.Text) || string.IsNullOrEmpty(txtDegDepartmentFID.Text) || string.IsNullOrEmpty(txtDegClassFID.Text) || string.IsNullOrEmpty(txtDegCourseAssignFID.Text) || string.IsNullOrEmpty(txtDegCourseFID.Text) || string.IsNullOrEmpty(txtDegDepartmentFID.Text))
                 {
                     await DisplayAlert("ERROR", "Please fill the required field", "ok");
                     return;
                 }
 
-                App.db.CreateTable<TBL_DEGREE>();
+                // App.db.CreateTable<TBL_DEGREE>();
+                var check = (await App.firebaseDatabase.Child("TBL_DEGREE").OnceAsync<TBL_DEGREE>()).FirstOrDefault(x => x.Object.DEGREE_NAME == txtDegName.Text);
+                if (check != null)
+                {
+                    await DisplayAlert("ERROR", "Degree is  already added", "ok");
+                    return;
+                }
+                LoadingInd.IsRunning = true;
+                int LastID, NewID = 1;
+
+                var LastRecord = (await App.firebaseDatabase.Child("TBL_DEGREE").OnceAsync<TBL_DEGREE>()).FirstOrDefault();
+                if (LastRecord != null)
+                {
+                    LastID = (await App.firebaseDatabase.Child("TBL_DEGREE").OnceAsync<TBL_DEGREE>()).Max(a => a.Object.DEGREE_ID);
+                    NewID = ++LastID;
+                }
 
                 TBL_DEGREE deg = new TBL_DEGREE()
                 {
-
+                    DEGREE_ID= NewID,
                     DEGREE_NAME = txtDegName.Text,
                     DEPARTMENT_FID = int.Parse(txtDegDepartmentFID.Text),
-                    TBL_CLASSFID = int.Parse(txtDegTBL_ClassFID.Text),
-                    TBL_COURSE_ASSIGNFID = int.Parse(txtDegTBL_CourseAssignFID.Text),
-                    TBL_COURSEFID = int.Parse(txtDegTBL_CourseFID.Text),
-                    TBL_DEPARTMENTFID = int.Parse(txtDegTBL_DepartmentFID.Text),
+                    CLASSFID = int.Parse(txtDegClassFID.Text),
+                    COURSE_ASSIGNFID = int.Parse(txtDegCourseAssignFID.Text),
+                    COURSEFID = int.Parse(txtDegCourseFID.Text),
+                  
 
                 };
 
-                App.db.Insert(deg);
+                //App.db.Insert(deg);
+                await App.firebaseDatabase.Child("TBL_DEGREE").PostAsync(deg);
+
+                LoadingInd.IsRunning = false;
                 await DisplayAlert("Success", "Degree Added", "ok");
 
 
             }
             catch (Exception ex)
             {
+                LoadingInd.IsRunning = false;
                 await DisplayAlert("Error", "Somethimg went wrong,Please try again later\nError:" + ex.Message, "ok");
 
             }
