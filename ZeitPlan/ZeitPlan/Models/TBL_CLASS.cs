@@ -17,9 +17,5 @@
 
         public int DEGREE_FID { get; set; }
 
-        
-        public  int STUDENTFID { get; set; }
-
-        
-        public  int TIMETABLEFID { get; set; }
+       
     }

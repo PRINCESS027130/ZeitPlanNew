@@ -6,9 +6,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Entry x:Name="txtDepartmentName" Placeholder="Department Name" Keyboard="Chat"/>
-            <Entry x:Name="txtDDegreeFID" Placeholder="TBL_DegreeFID" Keyboard="Numeric"/>
-            <Entry x:Name="txtDRoomFID" Placeholder="TBL_RoomFID" Keyboard="Numeric"/>
-            <Entry x:Name="txtDTeacherFID" Placeholder="TBL_TeacherFID" Keyboard="Numeric"/>
+            
             <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>
             <Button Text="Add Department" x:Name="btnDepartment" Clicked="btnDepartment_Clicked"/>
         </StackLayout>

@@ -16,5 +16,5 @@
 
         public int CLASS_FID { get; set; }
 
-        public int TBL_CLASSFID { get; set; }
+       
     }

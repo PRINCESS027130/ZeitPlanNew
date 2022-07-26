@@ -55,8 +55,7 @@ namespace ZeitPlan.Views.Admin
                 SECTION = x.Object.SECTION,
                 SHIFT = x.Object.SHIFT,
                 DEGREE_FID = x.Object.DEGREE_FID,
-                STUDENTFID = x.Object.STUDENTFID,
-                TIMETABLEFID = x.Object.TIMETABLEFID,
+              
 
             }).ToList();
         }

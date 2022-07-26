@@ -53,10 +53,7 @@ namespace ZeitPlan.Views.Admin
                 ROOM_ID = x.Object.ROOM_ID,
                 ROOM_NO = x.Object.ROOM_NO,
                 DEPARTMENT_FID = x.Object.DEPARTMENT_FID,
-                TIMETABLE_FID = x.Object.TIMETABLE_FID,
-               
-               
-
+          
             }).ToList();
         }
 

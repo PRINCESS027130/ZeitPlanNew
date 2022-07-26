@@ -21,7 +21,7 @@ namespace ZeitPlan.Views.Admin
         {
             try
             {
-                if (string.IsNullOrEmpty(txtstdName.Text) || string.IsNullOrEmpty(txtstdEmail.Text) || string.IsNullOrEmpty(txtstdPassword.Text) || string.IsNullOrEmpty(txtstdClassFID.Text) || string.IsNullOrEmpty(txtstdTBLClassFID.Text))
+                if (string.IsNullOrEmpty(txtstdName.Text) || string.IsNullOrEmpty(txtstdEmail.Text) || string.IsNullOrEmpty(txtstdPassword.Text) || string.IsNullOrEmpty(txtstdClassFID.Text))
                 {
                     await DisplayAlert("ERROR", "Please fill the required field", "ok");
                     return;
@@ -43,7 +43,7 @@ namespace ZeitPlan.Views.Admin
                     STUDENT_EMAIL = txtstdEmail.Text,
                     STUDENT_PASSWORD = txtstdPassword.Text,
                     CLASS_FID = int.Parse(txtstdClassFID.Text),
-                    TBL_CLASSFID = int.Parse(txtstdTBLClassFID.Text)
+                    
                 };
 
                 App.db.Insert(std);

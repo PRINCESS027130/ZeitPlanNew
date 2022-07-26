@@ -22,7 +22,7 @@ namespace ZeitPlan.Views.Admin
         {
             try
             {
-                if (string.IsNullOrEmpty(txtDepartmentName.Text) || string.IsNullOrEmpty(txtDDegreeFID.Text) || string.IsNullOrEmpty(txtDRoomFID.Text) || string.IsNullOrEmpty(txtDTeacherFID.Text))
+                if (string.IsNullOrEmpty(txtDepartmentName.Text))
                 {
                     await DisplayAlert("ERROR", "Please fill the required field", "ok");
                     return;
@@ -50,9 +50,7 @@ namespace ZeitPlan.Views.Admin
                 {
                     DEPARTMENT_ID= NewID,
                     DEPARTMENT_NAME =txtDepartmentName.Text,
-                    DEGREEFID= int.Parse(txtDDegreeFID.Text),
-                    ROOMFID = int.Parse(txtDRoomFID.Text),
-                    TEACHERFID = int.Parse(txtDTeacherFID.Text),
+                   
 
                 };
 

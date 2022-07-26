@@ -20,8 +20,7 @@ namespace ZeitPlan.Views.Admin
             lblSECTION.Text = Cl.SECTION;
             lblSHIFT.Text = Cl.SHIFT;
             lblDegreeFID.Text = Cl.DEGREE_FID.ToString();
-            lblStudentFID.Text = Cl.STUDENTFID.ToString();
-            lblTimeTableFID.Text = Cl.TIMETABLEFID.ToString();
+           
             
 
 

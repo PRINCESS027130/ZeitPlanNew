@@ -9,11 +9,7 @@
             <Entry x:Name="txtTSlotFID" Placeholder="Slot FID" Keyboard="Numeric"/>
             <Entry x:Name="txtTRoomFID" Placeholder="Room FID" Keyboard="Numeric"/>
             <Entry x:Name="txtTCourse_AssignFID" Placeholder="Course_Assign FID" Keyboard="Numeric"/>
-            <Entry x:Name="txtTtblClassFID" Placeholder="Tbl_Class FID" Keyboard="Numeric"/>
-            <Entry x:Name="txtTtblCourse_AssignFID" Placeholder="Tbl_Course_Assign FID" Keyboard="Numeric"/>
-            <Entry x:Name="txtTtblRoomFID" Placeholder="Tbl_Room FID" Keyboard="Numeric"/>
-            <Entry x:Name="txtTtblSlotFID" Placeholder="Tbl_Slot FID" Keyboard="Numeric"/>
-            <Entry x:Name="txtTtblTeacherFID" Placeholder="Tbl_Teacher FID" Keyboard="Numeric"/>
+            
             <Button Text="Add TimeTable" x:Name="btnTimeTable" Clicked="btnTimeTable_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

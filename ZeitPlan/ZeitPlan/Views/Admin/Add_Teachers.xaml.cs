@@ -92,14 +92,14 @@ namespace ZeitPlan.Views.Admin
         {
             try
             {
-                if (string.IsNullOrEmpty(txtTeName.Text) || string.IsNullOrEmpty(txtTePhone.Text) || string.IsNullOrEmpty(txtTeEmail.Text) || string.IsNullOrEmpty(txtTePassword.Text))
+                if (string.IsNullOrEmpty(txtTeName.Text) || string.IsNullOrEmpty(txtTePhone.Text) || string.IsNullOrEmpty(txtTeEmail.Text) || string.IsNullOrEmpty(txtTePassword.Text) || string.IsNullOrEmpty(txtTeDepartmentFID.Text))
                 {
                     await DisplayAlert("ERROR", "Please fill the required field", "ok");
                     return;
                 }
                 
-                App.db.CreateTable<Models.Teacher>();
-                var check = App.db.Table<Models.Teacher>().FirstOrDefault(x => x.Teacher_Email == txtTeEmail.Text);
+                App.db.CreateTable<TBL_TEACHER>();
+                var check = App.db.Table<TBL_TEACHER>().FirstOrDefault(x => x.TEACHER_EMAIL == txtTeEmail.Text);
                 if (check != null)
                 {
                     await DisplayAlert("ERROR", "Email already registered", "ok");
@@ -107,14 +107,15 @@ namespace ZeitPlan.Views.Admin
                 }
 
 
-                Models.Teacher u = new Models.Teacher()
+                TBL_TEACHER u = new TBL_TEACHER()
                 {
-                    Teacher_Name = txtTeName.Text,
-                    Teacher_Phone = txtTePhone.Text,
-                    Teacher_Email = txtTeEmail.Text,
-                    Teacher_Password = txtTePassword.Text,
-                    Teacher_Address = txtTeAddress.Text,
-                   Teacher_image=PicPath
+                    TEACHER_NAME = txtTeName.Text,
+                    TEACHER_EMAIL = txtTeEmail.Text,
+                    TEACHER_PASSWORD = txtTePassword.Text,
+                    TEACHER_PHNO = txtTePhone.Text,
+                    TEACHER_ADDRESS = txtTeAddress.Text,
+                    DEPARTMENT_FID=int.Parse(txtTeDepartmentFID.Text),
+                   TEACHER_IMAGE=PicPath,
                 };
 
                 App.db.Insert(u);

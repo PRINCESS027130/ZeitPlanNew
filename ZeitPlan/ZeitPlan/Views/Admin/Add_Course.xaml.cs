@@ -22,7 +22,7 @@ namespace ZeitPlan.Views.Admin
         {
             try
             {
-                if (string.IsNullOrEmpty(txtCOName.Text) || string.IsNullOrEmpty(txtCOCredit_Hours.Text) || string.IsNullOrEmpty(txtCODegreeFID.Text) || string.IsNullOrEmpty(txtCOCourseAssignFID.Text))
+                if (string.IsNullOrEmpty(txtCOName.Text) || string.IsNullOrEmpty(txtCOCredit_Hours.Text) || string.IsNullOrEmpty(txtCODegreeFID.Text))
                 {
                     await DisplayAlert("ERROR", "Please fill the required field", "ok");
                     return;
@@ -52,7 +52,7 @@ namespace ZeitPlan.Views.Admin
                     COURSE_NAME = txtCOName.Text,
                     CREDIT_HOURS = txtCOCredit_Hours.Text,
                     DEGREE_FID=int.Parse(txtCODegreeFID.Text),
-                    COURSE_ASSIGNFID = int.Parse(txtCOCourseAssignFID.Text),
+                   
     
 
                 };

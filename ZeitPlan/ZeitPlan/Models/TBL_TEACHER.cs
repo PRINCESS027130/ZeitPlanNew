@@ -19,9 +19,7 @@
         public string TEACHER_ADDRESS { get; set; }
 
         public int DEPARTMENT_FID { get; set; }
-
-        public int TBL_DEPARTMENTFID { get; set; }
+        public string TEACHER_IMAGE { get; set; }
 
        
-        public int TBL_TIMETABLEFID { get; set; }
     }

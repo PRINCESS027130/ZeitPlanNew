@@ -12,16 +12,14 @@
                     <Label Grid.Row="3" Grid.Column="0"  BackgroundColor="#bd6513" Text="SECTION:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                     <Label Grid.Row="4" Grid.Column="0"  BackgroundColor="#bd6513" Text="SHIFT:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                     <Label Grid.Row="5" Grid.Column="0"  BackgroundColor="#bd6513" Text="Degree FID:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                    <Label Grid.Row="5" Grid.Column="0"  BackgroundColor="#bd6513" Text="Student FID:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                    <Label Grid.Row="5" Grid.Column="0"  BackgroundColor="#bd6513" Text="TimeTable FID:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    
 
                     <Label Grid.Row="1" Grid.Column="1" x:Name="lblClassId" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                     <Label Grid.Row="2" Grid.Column="1" x:Name="lblSESSION" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                     <Label Grid.Row="3" Grid.Column="1" x:Name="lblSECTION" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                     <Label Grid.Row="4" Grid.Column="1" x:Name="lblSHIFT" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                     <Label Grid.Row="5" Grid.Column="1" x:Name="lblDegreeFID" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
-                    <Label Grid.Row="5" Grid.Column="1" x:Name="lblStudentFID" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
-                    <Label Grid.Row="5" Grid.Column="1" x:Name="lblTimeTableFID" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                   
 
                 </Grid>
             </ScrollView>

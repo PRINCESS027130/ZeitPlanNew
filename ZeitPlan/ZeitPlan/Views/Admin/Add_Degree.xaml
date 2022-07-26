@@ -6,9 +6,6 @@
         <StackLayout>
             <Entry x:Name="txtDegName" Placeholder="Degree Name" Keyboard="Chat"/>
             <Entry x:Name="txtDegDepartmentFID" Placeholder="DepartmentFID" Keyboard="Numeric"/>
-            <Entry x:Name="txtDegClassFID" Placeholder="TBL_ClassFID" Keyboard="Numeric"/>
-            <Entry x:Name="txtDegCourseFID" Placeholder="TBL_CourseFID" Keyboard="Numeric"/>
-            <Entry x:Name="txtDegCourseAssignFID" Placeholder="TBL_CourseAssignFID" Keyboard="Numeric"/>
             
             <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>
             <Button x:Name="btnDegree" Text="Add Degree" Clicked="btnDegree_Clicked"/>

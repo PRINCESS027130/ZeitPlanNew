@@ -17,14 +17,6 @@
 
         public int COURSE_ASSIGN_FID { get; set; }
 
-        public int TBL_CLASSFID { get; set; }
-
-        public int TBL_COURSE_ASSIGNFID { get; set; }
-
-        public int TBL_ROOMFID { get; set; }
-
-        public int TBL_SLOTFID { get; set; }
-
-        public int TBL_TEACHERFID { get; set; }
+        
     }
 

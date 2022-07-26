@@ -53,9 +53,7 @@ namespace ZeitPlan.Views.Admin
                 DEGREE_ID = x.Object.DEGREE_ID,
                 DEGREE_NAME = x.Object.DEGREE_NAME,
                 DEPARTMENT_FID = x.Object.DEPARTMENT_FID,
-                CLASSFID = x.Object.CLASSFID,
-                COURSEFID = x.Object.COURSEFID,
-                COURSE_ASSIGNFID = x.Object.COURSE_ASSIGNFID,
+               
                
 
             }).ToList();

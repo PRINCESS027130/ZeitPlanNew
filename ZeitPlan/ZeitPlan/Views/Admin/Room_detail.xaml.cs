@@ -18,10 +18,7 @@ namespace ZeitPlan.Views.Admin
              lblRoomId.Text = r.ROOM_ID.ToString();
             lblRoom_no.Text = r.ROOM_NO;
             lblDepartmentFID.Text = r.DEPARTMENT_FID.ToString();
-           lblTimeTableFID.Text = r.TIMETABLE_FID.ToString();
-      
-            
-
+         
         }
     }
 }

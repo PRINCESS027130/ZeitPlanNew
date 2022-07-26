@@ -53,7 +53,6 @@ namespace ZeitPlan.Views.Admin
                 COURSE_ID = x.Object.COURSE_ID,
                 COURSE_NAME = x.Object.COURSE_NAME,
                 CREDIT_HOURS = x.Object.CREDIT_HOURS,
-                COURSE_ASSIGNFID = x.Object.COURSE_ASSIGNFID,
                 DEGREE_FID = x.Object.DEGREE_FID
 
             }).ToList();

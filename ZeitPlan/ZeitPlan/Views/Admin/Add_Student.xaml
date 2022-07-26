@@ -8,7 +8,7 @@
             <Entry x:Name="txtstdEmail" Placeholder="Student Email" Keyboard="Email"/>
             <Entry x:Name="txtstdPassword" Placeholder="Student password" IsPassword="True"/>
             <Entry x:Name="txtstdClassFID" Placeholder="Student ClassFID" Keyboard="Chat"/>
-            <Entry x:Name="txtstdTBLClassFID" Placeholder="Student TBLClassFID " Keyboard="Chat"/>
+            
             <Button Text="Add Student" x:Name="btnStudent" Clicked="btnStudent_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

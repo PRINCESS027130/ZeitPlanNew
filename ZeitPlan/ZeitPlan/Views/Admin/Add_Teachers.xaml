@@ -16,6 +16,8 @@
             <Entry x:Name="txtTePhone" Placeholder="Teacher Phone" Keyboard="Numeric"/>
             <Entry x:Name="txtTePassword" Placeholder="Teacher Password" IsPassword="True"/>
             <Entry x:Name="txtTeAddress" Placeholder="Teacher Address" Keyboard="Chat"/>
+            <Entry x:Name="txtTeDepartmentFID" Placeholder="Department FID" Keyboard="Numeric"/>
+            <Entry x:Name="txtTeImage" Placeholder="Teacher Image"/>
             <Button Text="Add Teacher" x:Name="btnTeacher" Clicked="btnTeacher_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

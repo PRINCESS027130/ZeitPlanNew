@@ -12,11 +12,6 @@
 
         public int DEGREE_FID { get; set; }
 
-        public int TBL_COURSEFID { get; set; }
-
-        public int TBL_DEGREEFID { get; set; }
-
         
-        public int TBL_TIMETABLEFID { get; set; }
     }
 

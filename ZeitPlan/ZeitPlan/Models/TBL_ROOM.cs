@@ -14,6 +14,6 @@
         public int DEPARTMENT_FID { get; set; }
 
         
-        public int TIMETABLE_FID { get; set; }
+       
     }
 

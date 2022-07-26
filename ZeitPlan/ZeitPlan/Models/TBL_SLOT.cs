@@ -13,6 +13,4 @@
 
         public DateTime SLOT_END_TIME { get; set; }
 
-       
-        public int TBL_TIMETABLEFID { get; set; }
     }
