@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ZeitPlan.Views.Admin.Add_Student">
+             x:Class="ZeitPlan.Views.Teacher.Add_Student">
     <ContentPage.Content>
         <StackLayout>
             <Entry x:Name="txtstdName" Placeholder="Student Name" Keyboard="Chat"/>
             <Entry x:Name="txtstdEmail" Placeholder="Student Email" Keyboard="Email"/>
             <Entry x:Name="txtstdPassword" Placeholder="Student password" IsPassword="True"/>
             <Entry x:Name="txtstdClassFID" Placeholder="Student ClassFID" Keyboard="Chat"/>
-            
+            <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>
             <Button Text="Add Student" x:Name="btnStudent" Clicked="btnStudent_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

@@ -1,4 +1,5 @@
-﻿using Plugin.Media;
+﻿using Firebase.Database.Query;
+using Plugin.Media;
 using Plugin.Media.Abstractions;
 using System;
 using System.Collections.Generic;
@@ -97,18 +98,33 @@ namespace ZeitPlan.Views.Admin
                     await DisplayAlert("ERROR", "Please fill the required field", "ok");
                     return;
                 }
-                
-                App.db.CreateTable<TBL_TEACHER>();
-                var check = App.db.Table<TBL_TEACHER>().FirstOrDefault(x => x.TEACHER_EMAIL == txtTeEmail.Text);
+
+                // App.db.CreateTable<TBL_TEACHER>();
+                //  var check = App.db.Table<TBL_TEACHER>().FirstOrDefault(x => x.TEACHER_EMAIL == txtTeEmail.Text);
+                //if (check != null)
+                //{
+                //  await DisplayAlert("ERROR", "Email already registered", "ok");
+                //return;
+                //}
+                var check = (await App.firebaseDatabase.Child("TBL_TEACHER").OnceAsync<TBL_TEACHER>()).FirstOrDefault(x => x.Object.TEACHER_EMAIL == txtTeEmail.Text);
                 if (check != null)
                 {
-                    await DisplayAlert("ERROR", "Email already registered", "ok");
+                    await DisplayAlert("ERROR", "Teacher is  already added", "ok");
                     return;
+                }
+                LoadingInd.IsRunning = true;
+                int LastID, NewID = 1;
+
+                var LastRecord = (await App.firebaseDatabase.Child("TBL_TEACHER").OnceAsync<TBL_TEACHER>()).FirstOrDefault();
+                if (LastRecord != null)
+                {
+                    LastID = (await App.firebaseDatabase.Child("TBL_TEACHER").OnceAsync<TBL_TEACHER>()).Max(a => a.Object.TEACHER_ID);
+                    NewID = ++LastID;
                 }
 
 
-                TBL_TEACHER u = new TBL_TEACHER()
-                {
+                TBL_TEACHER t = new TBL_TEACHER()
+                {   TEACHER_ID= NewID,
                     TEACHER_NAME = txtTeName.Text,
                     TEACHER_EMAIL = txtTeEmail.Text,
                     TEACHER_PASSWORD = txtTePassword.Text,
@@ -118,13 +134,17 @@ namespace ZeitPlan.Views.Admin
                    TEACHER_IMAGE=PicPath,
                 };
 
-                App.db.Insert(u);
+                // App.db.Insert(u);
+                await App.firebaseDatabase.Child("TBL_TEACHER").PostAsync(t);
+
+                LoadingInd.IsRunning = false;
                 await DisplayAlert("Success", "Teacher Added", "ok");
                
 
             }
             catch (Exception ex)
             {
+                LoadingInd.IsRunning = false;
                 await DisplayAlert("Error", "Somethimg went wrong,Please try again later\nError:" + ex.Message, "ok");
 
             }

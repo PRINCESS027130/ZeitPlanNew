@@ -43,6 +43,9 @@
     <Compile Update="Views\Admin\Class_Detail.xaml.cs">
       <DependentUpon>Class_Detail.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Admin\Manage_Teacher.xaml.cs">
+      <DependentUpon>Manage_Teacher.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Admin\Room_detail.xaml.cs">
       <DependentUpon>Room_detail.xaml</DependentUpon>
     </Compile>
@@ -66,6 +69,15 @@
     </Compile>
     <Compile Update="Views\Admin\Manage_Course.xaml.cs">
       <DependentUpon>Manage_Course.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Admin\Teacher_Detail.xaml.cs">
+      <DependentUpon>Teacher_Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Teacher\Student_Detail.xaml.cs">
+      <DependentUpon>Student_Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Teacher\Manage_Student.xaml.cs">
+      <DependentUpon>Manage_Student.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

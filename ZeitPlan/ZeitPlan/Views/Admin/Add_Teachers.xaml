@@ -18,6 +18,7 @@
             <Entry x:Name="txtTeAddress" Placeholder="Teacher Address" Keyboard="Chat"/>
             <Entry x:Name="txtTeDepartmentFID" Placeholder="Department FID" Keyboard="Numeric"/>
             <Entry x:Name="txtTeImage" Placeholder="Teacher Image"/>
+            <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>
             <Button Text="Add Teacher" x:Name="btnTeacher" Clicked="btnTeacher_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

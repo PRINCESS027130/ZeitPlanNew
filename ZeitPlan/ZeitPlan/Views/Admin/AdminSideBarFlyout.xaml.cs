@@ -34,7 +34,6 @@ namespace ZeitPlan.Views.Admin
                 MenuItems = new ObservableCollection<AdminSideBarFlyoutMenuItem>(new[]
                 {
                     new AdminSideBarFlyoutMenuItem { Id = 0,Icon="icon_feed.png", Title = "Add Teacher",TargetType=typeof(Add_Teachers) },
-                    new AdminSideBarFlyoutMenuItem { Id = 1,Icon="icon_feed.png", Title = "Add Student",TargetType=typeof(Add_Student) },
                     new AdminSideBarFlyoutMenuItem { Id = 2,Icon="icon_feed.png", Title = "Add Degree",TargetType=typeof(Add_Degree) },
                     new AdminSideBarFlyoutMenuItem { Id = 2,Icon="icon_feed.png", Title = "Manage Degree",TargetType=typeof(Manage_Degree) },
                     new AdminSideBarFlyoutMenuItem { Id = 3,Icon="icon_feed.png", Title = "Add Department",TargetType=typeof(Add_Department) },

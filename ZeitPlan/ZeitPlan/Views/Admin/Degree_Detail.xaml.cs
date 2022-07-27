@@ -18,10 +18,7 @@ namespace ZeitPlan.Views.Admin
              lblDegreeId.Text = deg.DEGREE_ID.ToString();
             lblDegreeName.Text = deg.DEGREE_NAME;
             lblDepartmentFID.Text = deg.DEPARTMENT_FID.ToString();
-           lblClassFID.Text = deg.CLASSFID.ToString();
-            lblCourseAssignFID.Text = deg.COURSE_ASSIGNFID.ToString();
-            lblCourseFID.Text = deg.COURSEFID.ToString();
-            
+          
 
 
         }

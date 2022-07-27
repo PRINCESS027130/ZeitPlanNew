@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZeitPlan.Views.Admin.Teacher_Detail"
+             Title="Teacher Detail">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <Grid ColumnDefinitions="150*,400*" RowDefinitions="50,50,50,50,50,50,50,50">
+                    <Label Grid.Row="1" Grid.Column="0"  BackgroundColor="#bd6513" Text="Teacher Id:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="2" Grid.Column="0"  BackgroundColor="#bd6513" Text="Teacher Name:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="3" Grid.Column="0"  BackgroundColor="#bd6513" Text="Teacher Email:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="4" Grid.Column="0"  BackgroundColor="#bd6513" Text="Teacher Password:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="5" Grid.Column="0"  BackgroundColor="#bd6513" Text="Teacher phno:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="6" Grid.Column="0"  BackgroundColor="#bd6513" Text="Teacher Address:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="7" Grid.Column="0"  BackgroundColor="#bd6513" Text="Teacher image:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="8" Grid.Column="0"  BackgroundColor="#bd6513" Text="DepartmentFID:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+
+
+                    <Label Grid.Row="1" Grid.Column="1" x:Name="lblTeacherId" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                    <Label Grid.Row="2" Grid.Column="1" x:Name="lblTeacherName" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                    <Label Grid.Row="3" Grid.Column="1" x:Name="lblTeacherEmail" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                    <Label Grid.Row="4" Grid.Column="1" x:Name="lblTeacherPassword" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                    <Label Grid.Row="5" Grid.Column="1" x:Name="lblTeacherphno" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                    <Label Grid.Row="6" Grid.Column="1" x:Name="lblTeacherAddress" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                    <Label Grid.Row="7" Grid.Column="1" x:Name="lblTeacherimage" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                    <Label Grid.Row="8" Grid.Column="1" x:Name="lblDepartmentFID" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                   
+
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
