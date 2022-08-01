@@ -7,9 +7,15 @@
         <StackLayout Padding="24" VerticalOptions="Center">
 
             <Entry IsTextPredictionEnabled="True" Keyboard="Chat" Placeholder="Name" x:Name="txtName"/>
-            <Entry Keyboard="Numeric" Placeholder="Phone" x:Name="txtPhone"/>
-            <Entry Keyboard="Email" Placeholder="Email" x:Name="txtEmail"/>
-            <Entry IsPassword="True" Placeholder="Password" x:Name="txtPassword"/>
+            <Entry Keyboard="Email" Placeholder="Email" x:Name="txtEmail" TextChanged="txtEmail_TextChanged"/>
+            <Label x:Name="lblEmailValid"/>
+            
+            <Entry Keyboard="Numeric" Placeholder="Phone" x:Name="txtPhone" TextChanged="txtPhone_TextChanged"/>
+            <Label x:Name="lblPhoneValid"/>
+            
+            <Entry IsPassword="True" Placeholder="Password" x:Name="txtPassword" TextChanged="txtPassword_TextChanged"/>
+            <Label x:Name="lblPasswordValid"/>
+
             <Entry IsPassword="True" Placeholder=" Confirm Password" x:Name="txtCPassword"/>
             <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>
             <Button Text="Register" Clicked="Button_Clicked"/>

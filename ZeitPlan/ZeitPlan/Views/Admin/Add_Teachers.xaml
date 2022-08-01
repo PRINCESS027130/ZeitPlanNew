@@ -4,6 +4,7 @@
              x:Class="ZeitPlan.Views.Admin.Add_Teachers"
              Title="Add Teachers">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout Padding="24">
             <Image x:Name="PreviewPic" Source="image_picker.png">
                 <Image.GestureRecognizers>
@@ -21,5 +22,6 @@
             <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>
             <Button Text="Add Teacher" x:Name="btnTeacher" Clicked="btnTeacher_Clicked"/>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -17,7 +17,7 @@ namespace ZeitPlan
         public static string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "dbZeitPlan.db3");
         public static SQLiteConnection db = new SQLiteConnection(dbpath);
         //Firebase Connections  ======================================
-        public static FirebaseStorage FirebaseStorage = new FirebaseStorage("gs://zeitplan-6d6dc.appspot.com");
+        public static FirebaseStorage FirebaseStorage = new FirebaseStorage("zeitplan-6d6dc.appspot.com");
 
         public static FirebaseClient firebaseDatabase = new FirebaseClient("https://zeitplan-6d6dc-default-rtdb.firebaseio.com/");
 
@@ -26,7 +26,7 @@ namespace ZeitPlan
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new StartPage();
+            MainPage = new SplashScreen();
         }
 
         protected override void OnStart()

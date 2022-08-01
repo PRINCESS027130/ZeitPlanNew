@@ -16,6 +16,7 @@ namespace ZeitPlan.Views.Admin
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Add_Teachers : ContentPage
     {
+        private MediaFile _mediaFile;
         public static string PicPath = "image_picker.png";
         public Add_Teachers()
         {
@@ -48,7 +49,7 @@ namespace ZeitPlan.Views.Admin
                         await DisplayAlert("Error", "Error Picking Image...", "OK");
                         return;
                     }
-
+                    _mediaFile = SelectedImg;
                     PicPath = SelectedImg.Path;
                     PreviewPic.Source = SelectedImg.Path;
 
@@ -75,7 +76,7 @@ namespace ZeitPlan.Views.Admin
                         await DisplayAlert("Error", "Error Picking Image...", "OK");
                         return;
                     }
-
+                    _mediaFile = SelectedImg;
                     PicPath = SelectedImg.Path;
                     PreviewPic.Source = SelectedImg.Path;
 
@@ -122,8 +123,14 @@ namespace ZeitPlan.Views.Admin
                     NewID = ++LastID;
                 }
 
+                var StoredImageURL = await App.FirebaseStorage
+                            .Child("TEACHER_IMAGE")
+                            .Child(NewID.ToString()+"_"+txtTeName.Text + ".jpg")
+                            .PutAsync(_mediaFile.GetStream());
 
-                TBL_TEACHER t = new TBL_TEACHER()
+
+
+        TBL_TEACHER t = new TBL_TEACHER()
                 {   TEACHER_ID= NewID,
                     TEACHER_NAME = txtTeName.Text,
                     TEACHER_EMAIL = txtTeEmail.Text,
@@ -131,7 +138,7 @@ namespace ZeitPlan.Views.Admin
                     TEACHER_PHNO = txtTePhone.Text,
                     TEACHER_ADDRESS = txtTeAddress.Text,
                     DEPARTMENT_FID=int.Parse(txtTeDepartmentFID.Text),
-                   TEACHER_IMAGE=PicPath,
+                   TEACHER_IMAGE= StoredImageURL,
                 };
 
                 // App.db.Insert(u);

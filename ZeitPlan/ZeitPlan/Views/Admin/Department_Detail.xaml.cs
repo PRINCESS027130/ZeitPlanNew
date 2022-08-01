@@ -17,9 +17,7 @@ namespace ZeitPlan.Views.Admin
             InitializeComponent();
              lblDepartmntId.Text = d.DEPARTMENT_ID.ToString();
             lblDepartmentName.Text = d.DEPARTMENT_NAME;
-            lblDegreeFID.Text = d.DEGREEFID.ToString();
-           lblRoomFID.Text = d.ROOMFID.ToString();
-            lblTeacherFID.Text = d.TEACHERFID.ToString();
+           
             
 
 

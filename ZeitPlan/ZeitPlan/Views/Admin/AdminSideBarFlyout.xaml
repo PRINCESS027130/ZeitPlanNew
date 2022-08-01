@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:ZeitPlan.Helpers"
              x:Class="ZeitPlan.Views.Admin.AdminSideBarFlyout"
              Title="Flyout">
   <StackLayout>
@@ -33,7 +34,12 @@
           <ViewCell>
             <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
                    <StackLayout Orientation="Horizontal">
-                                <Image Source="{Binding Icon}" WidthRequest="25"></Image>
+                               <Image Source="{Binding Icon}" WidthRequest="25"></Image>
+                                <!--<Image.Source>
+                                    <FontImageSource  FontFamily="{DynamicResource FontAwesome}" Glyph="{x:Static helpers:FontAwesome.Phone }" Size="44" Color="White" />
+                                </Image.Source>
+                                </Image>-->
+
                                 <Label VerticalOptions="FillAndExpand" Text="{Binding Title}" FontSize="25"/>
                     </StackLayout>
             </StackLayout>

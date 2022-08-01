@@ -32,7 +32,7 @@ namespace ZeitPlan.Views.Admin
                 var check = (await App.firebaseDatabase.Child("TBL_DEPARTMENT").OnceAsync<TBL_DEPARTMENT>()).FirstOrDefault(x => x.Object.DEPARTMENT_NAME == txtDepartmentName.Text);
                 if (check != null)
                 {
-                    await DisplayAlert("ERROR", "Degree is  already added", "ok");
+                    await DisplayAlert("ERROR", "Depatrment is  already added", "ok");
                     return;
                 }
                 LoadingInd.IsRunning = true;
