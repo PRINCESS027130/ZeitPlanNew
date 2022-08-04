@@ -17,9 +17,12 @@
         public string TEACHER_PHNO { get; set; }
 
         public string TEACHER_ADDRESS { get; set; }
+        public string TEACHER_IMAGE { get; set; }
 
         public int DEPARTMENT_FID { get; set; }
-        public string TEACHER_IMAGE { get; set; }
+
+        public int TEACHER_ASSIGN_FID{ get; set; }
+       
 
        
     }

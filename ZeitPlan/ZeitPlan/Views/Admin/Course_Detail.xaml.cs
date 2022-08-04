@@ -18,11 +18,8 @@ namespace ZeitPlan.Views.Admin
              lblCourseId.Text = Co.COURSE_ID.ToString();
             lblCourseName.Text = Co.COURSE_NAME;
             lblCreditHours.Text = Co.CREDIT_HOURS;
-            lblDegreeFID.Text = Co.DEGREE_FID.ToString();
-            
-            
-
-
+            lblTeacherFID.Text = Co.TEACHER_FID.ToString();
+           
         }
     }
 }

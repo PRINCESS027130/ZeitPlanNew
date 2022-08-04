@@ -7,8 +7,10 @@
             <Entry x:Name="txtCSession" Placeholder="Session" Keyboard="Numeric"/>
             <Entry x:Name="txtCSection" Placeholder="Section" Keyboard="Chat"/>
             <Entry x:Name="txtCShift" Placeholder="Shift" Keyboard="Chat"/>
-            <Entry x:Name="txtCDegreeFID" Placeholder="DegreeFID" Keyboard="Numeric"/>
-           
+            <Picker Title="select Degree" x:Name="ddlDegree"/>
+            <Picker Title="select ClassCourse" x:Name="ddlClassCourseAssign"/>
+            <!--<Picker Title="select Student" x:Name="ddlStudent"/>-->
+
             <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>
             <Button Text="Add Class" x:Name="btnClass" Clicked="btnClass_Clicked"/>
         </StackLayout>

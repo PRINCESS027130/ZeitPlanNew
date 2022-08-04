@@ -14,7 +14,6 @@
 
         public string STUDENT_PASSWORD { get; set; }
 
-        public int CLASS_FID { get; set; }
 
        
     }

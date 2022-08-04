@@ -41,7 +41,7 @@ namespace ZeitPlan.Views.Teacher
                     new TeacherSideBarFlyoutMenuItem { Id = 3,Icon="icon_feed.png", Title = "Add Department",TargetType=typeof(Add_Department) },
                     new TeacherSideBarFlyoutMenuItem { Id = 4,Icon="icon_feed.png", Title = "Add Class",TargetType=typeof(Add_Class) },
                     new TeacherSideBarFlyoutMenuItem { Id = 4,Icon="icon_feed.png", Title = "Add Course",TargetType=typeof(Add_Course) },
-                    new TeacherSideBarFlyoutMenuItem { Id = 4,Icon="icon_feed.png", Title = "Add Course Assign",TargetType=typeof(Add_Course_Assign) },
+
                     new TeacherSideBarFlyoutMenuItem{ Id = 4,Icon="icon_feed.png", Title = "Add Room",TargetType=typeof(Add_Room) },
                     new TeacherSideBarFlyoutMenuItem { Id = 4,Icon="icon_feed.png", Title = "Add TimeTable",TargetType=typeof(Add_TimeTable) },
                 });

@@ -6,8 +6,9 @@
         <StackLayout>
             <Entry x:Name="txtCOName" Placeholder="Course Name" Keyboard="Chat"/>
             <Entry x:Name="txtCOCredit_Hours" Placeholder="Credit Hours" Keyboard="Numeric"/>
-            <Entry x:Name="txtCODegreeFID" Placeholder="DegreeFID" Keyboard="Numeric"/>
-            
+            <Picker Title="Select Teacher" x:Name="ddlTeacher"/>
+            <Picker Title="Select ClassCourseAssign" x:Name="ddlClassCourseAssign"/>
+
             <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>
             <Button Text="Add Course" x:Name="btnCourse" Clicked="btnCourse_Clicked"/>
         </StackLayout>

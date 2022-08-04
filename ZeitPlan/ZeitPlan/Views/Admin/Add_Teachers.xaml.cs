@@ -21,6 +21,30 @@ namespace ZeitPlan.Views.Admin
         public Add_Teachers()
         {
             InitializeComponent();
+            LoadData();
+        }
+        async void LoadData()
+        {
+            var firebaseList = (await App.firebaseDatabase.Child("TBL_DEPARTMENT").OnceAsync<TBL_DEPARTMENT>()).Select(x => new TBL_DEPARTMENT
+
+            {
+                DEPARTMENT_ID = x.Object.DEPARTMENT_ID,
+                DEPARTMENT_NAME = x.Object.DEPARTMENT_NAME,
+
+            }).ToList();
+            var refinedList = firebaseList.Select(x => x.DEPARTMENT_NAME).ToList();
+            ddlDepartment.ItemsSource = refinedList;
+
+            var firebaseList1 = (await App.firebaseDatabase.Child("TBL_TEACHER_ASSIGN").OnceAsync<TBL_TEACHER_ASSIGN>()).Select(x => new TBL_TEACHER_ASSIGN
+            {
+                TEACHER_ASSIGN_ID = x.Object.TEACHER_ASSIGN_ID,
+                TEACHER_FID = x.Object.TEACHER_FID,
+                CLASS_FID = x.Object.CLASS_FID
+
+            }).ToList();
+            var refinedList1 = firebaseList1.Select(x => x.TEACHER_ASSIGN_ID).ToList();
+           ddlTeacherAssign.ItemsSource = refinedList1;
+
         }
 
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
@@ -94,7 +118,7 @@ namespace ZeitPlan.Views.Admin
         {
             try
             {
-                if (string.IsNullOrEmpty(txtTeName.Text) || string.IsNullOrEmpty(txtTePhone.Text) || string.IsNullOrEmpty(txtTeEmail.Text) || string.IsNullOrEmpty(txtTePassword.Text) || string.IsNullOrEmpty(txtTeDepartmentFID.Text))
+                if (string.IsNullOrEmpty(txtTeName.Text) || string.IsNullOrEmpty(txtTePhone.Text) || string.IsNullOrEmpty(txtTeEmail.Text) || string.IsNullOrEmpty(txtTePassword.Text) || string.IsNullOrEmpty(txtTeAddress.Text))
                 {
                     await DisplayAlert("ERROR", "Please fill the required field", "ok");
                     return;
@@ -122,6 +146,22 @@ namespace ZeitPlan.Views.Admin
                     LastID = (await App.firebaseDatabase.Child("TBL_TEACHER").OnceAsync<TBL_TEACHER>()).Max(a => a.Object.TEACHER_ID);
                     NewID = ++LastID;
                 }
+                List<TBL_DEPARTMENT> dept = (await App.firebaseDatabase.Child("TBL_DEPARTMENT").OnceAsync<TBL_DEPARTMENT>()).Select(x => new TBL_DEPARTMENT
+                {
+                    DEPARTMENT_ID = x.Object.DEPARTMENT_ID,
+                    DEPARTMENT_NAME = x.Object.DEPARTMENT_NAME,
+
+                }).ToList();
+                int selected = dept[ddlDepartment.SelectedIndex].DEPARTMENT_ID;
+
+                List<TBL_TEACHER_ASSIGN> tsn = (await App.firebaseDatabase.Child("TBL_TEACHER_ASSIGN").OnceAsync<TBL_TEACHER_ASSIGN>()).Select(x => new TBL_TEACHER_ASSIGN
+                {
+                    TEACHER_ASSIGN_ID = x.Object.TEACHER_ASSIGN_ID,
+                    TEACHER_FID = x.Object.TEACHER_FID,
+                    CLASS_FID = x.Object.CLASS_FID
+
+                }).ToList();
+                int selected1 = tsn[ddlTeacherAssign.SelectedIndex].TEACHER_ASSIGN_ID;
 
                 var StoredImageURL = await App.FirebaseStorage
                             .Child("TEACHER_IMAGE")
@@ -137,7 +177,8 @@ namespace ZeitPlan.Views.Admin
                     TEACHER_PASSWORD = txtTePassword.Text,
                     TEACHER_PHNO = txtTePhone.Text,
                     TEACHER_ADDRESS = txtTeAddress.Text,
-                    DEPARTMENT_FID=int.Parse(txtTeDepartmentFID.Text),
+                    DEPARTMENT_FID=selected,
+                    TEACHER_ASSIGN_FID=selected1,
                    TEACHER_IMAGE= StoredImageURL,
                 };
 

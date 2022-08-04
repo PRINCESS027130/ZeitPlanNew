@@ -16,13 +16,26 @@ namespace ZeitPlan.Views.Admin
         public Add_Room()
         {
             InitializeComponent();
+            LoadData();
+        }
+        async void LoadData()
+        {
+            var firebaseList = (await App.firebaseDatabase.Child("TBL_DEPARTMENT").OnceAsync<TBL_DEPARTMENT>()).Select(x => new TBL_DEPARTMENT
+
+            {
+                DEPARTMENT_ID = x.Object.DEPARTMENT_ID,
+                DEPARTMENT_NAME = x.Object.DEPARTMENT_NAME,
+
+            }).ToList();
+            var refinedList = firebaseList.Select(x => x.DEPARTMENT_NAME).ToList();
+            ddlDepartment.ItemsSource = refinedList;
         }
 
-        private async void btnRoom_Clicked(object sender, EventArgs e)
+            private async void btnRoom_Clicked(object sender, EventArgs e)
         {
             try
             {
-                if (string.IsNullOrEmpty(txtRoom_No.Text) || string.IsNullOrEmpty(txtRDepartmentFID.Text))
+                if (string.IsNullOrEmpty(txtRoom_No.Text))
                 {
                     await DisplayAlert("ERROR", "Please fill the required field", "ok");
                     return;
@@ -44,13 +57,19 @@ namespace ZeitPlan.Views.Admin
                     LastID = (await App.firebaseDatabase.Child("TBL_ROOM").OnceAsync<TBL_ROOM>()).Max(a => a.Object.ROOM_ID);
                     NewID = ++LastID;
                 }
+                List<TBL_DEPARTMENT> dept = (await App.firebaseDatabase.Child("TBL_DEPARTMENT").OnceAsync<TBL_DEPARTMENT>()).Select(x => new TBL_DEPARTMENT
+                {
+                    DEPARTMENT_ID = x.Object.DEPARTMENT_ID,
+                    DEPARTMENT_NAME = x.Object.DEPARTMENT_NAME,
+
+                }).ToList();
+                int selected = dept[ddlDepartment.SelectedIndex].DEPARTMENT_ID;
 
                 TBL_ROOM r = new TBL_ROOM()
                 {
                     ROOM_ID= NewID,
                     ROOM_NO = txtRoom_No.Text,
-                    DEPARTMENT_FID = int.Parse(txtRDepartmentFID.Text),
-                   
+                    DEPARTMENT_FID = selected,
                    
                 };
 

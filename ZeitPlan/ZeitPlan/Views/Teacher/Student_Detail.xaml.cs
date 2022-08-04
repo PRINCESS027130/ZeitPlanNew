@@ -19,7 +19,7 @@ namespace ZeitPlan.Views.Teacher
             lblStudentName.Text = s.STUDENT_NAME;
             lblStudentEmail.Text = s.STUDENT_EMAIL.ToString();
            lblStudentPassword.Text = s.STUDENT_PASSWORD;
-            lblClassFID.Text =s.CLASS_FID.ToString();
+           
             
 
 

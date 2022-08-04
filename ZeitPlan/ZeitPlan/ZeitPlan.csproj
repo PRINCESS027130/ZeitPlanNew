@@ -21,6 +21,12 @@
     <EmbeddedResource Update="StartPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Admin\Add_ClassCourseAssign.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Admin\Add_TeacherAssign.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Admin\Course_Detail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -45,6 +51,12 @@
   <ItemGroup>
     <Compile Update="Views\Admin\Class_Detail.xaml.cs">
       <DependentUpon>Class_Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Admin\Manage_ClassCourseAssign.xaml.cs">
+      <DependentUpon>Manage_ClassCourseAssign.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Admin\Manage_TeacherAssign.xaml.cs">
+      <DependentUpon>Manage_TeacherAssign.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Admin\Manage_Teacher.xaml.cs">
       <DependentUpon>Manage_Teacher.xaml</DependentUpon>
@@ -72,6 +84,12 @@
     </Compile>
     <Compile Update="Views\Admin\Manage_Course.xaml.cs">
       <DependentUpon>Manage_Course.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Admin\ClassCourseAssign_Detail.xaml.cs">
+      <DependentUpon>ClassCourseAssign_Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Admin\TeacherAssign_Detail.xaml.cs">
+      <DependentUpon>TeacherAssign_Detail.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Admin\Teacher_Detail.xaml.cs">
       <DependentUpon>Teacher_Detail.xaml</DependentUpon>

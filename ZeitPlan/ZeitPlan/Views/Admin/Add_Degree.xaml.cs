@@ -16,13 +16,26 @@ namespace ZeitPlan.Views.Admin
         public Add_Degree()
         {
             InitializeComponent();
+            LoadData();
+        }
+        async void LoadData()
+        {
+            var firebaseList = (await App.firebaseDatabase.Child("TBL_DEPARTMENT").OnceAsync<TBL_DEPARTMENT>()).Select(x => new TBL_DEPARTMENT
+             
+            {
+                DEPARTMENT_ID = x.Object.DEPARTMENT_ID,
+                DEPARTMENT_NAME = x.Object.DEPARTMENT_NAME,
+               
+            }).ToList();
+            var refinedList = firebaseList.Select(x => x.DEPARTMENT_NAME).ToList();
+            ddlDepartment.ItemsSource = refinedList;
         }
 
         private async void btnDegree_Clicked(object sender, EventArgs e)
         {
             try
             {
-                if (string.IsNullOrEmpty(txtDegName.Text) || string.IsNullOrEmpty(txtDegDepartmentFID.Text) || string.IsNullOrEmpty(txtDegDepartmentFID.Text))
+                if (string.IsNullOrEmpty(txtDegName.Text))
                 {
                     await DisplayAlert("ERROR", "Please fill the required field", "ok");
                     return;
@@ -44,15 +57,20 @@ namespace ZeitPlan.Views.Admin
                     LastID = (await App.firebaseDatabase.Child("TBL_DEGREE").OnceAsync<TBL_DEGREE>()).Max(a => a.Object.DEGREE_ID);
                     NewID = ++LastID;
                 }
+                List<TBL_DEPARTMENT>dept = (await App.firebaseDatabase.Child("TBL_DEPARTMENT").OnceAsync<TBL_DEPARTMENT>()).Select(x => new TBL_DEPARTMENT
+                {
+                    DEPARTMENT_ID = x.Object.DEPARTMENT_ID,
+                    DEPARTMENT_NAME = x.Object.DEPARTMENT_NAME,
+
+                }).ToList();
+                int selected = dept[ddlDepartment.SelectedIndex].DEPARTMENT_ID;
 
                 TBL_DEGREE deg = new TBL_DEGREE()
                 {
                     DEGREE_ID= NewID,
                     DEGREE_NAME = txtDegName.Text,
-                    DEPARTMENT_FID = int.Parse(txtDegDepartmentFID.Text),
+                    DEPARTMENT_FID=selected
                    
-                  
-
                 };
 
                 //App.db.Insert(deg);

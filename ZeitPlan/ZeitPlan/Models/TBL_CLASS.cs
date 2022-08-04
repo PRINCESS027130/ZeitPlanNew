@@ -16,6 +16,9 @@
         public string SHIFT { get; set; }
 
         public int DEGREE_FID { get; set; }
+        public int CLASS_COURSE_FID { get; set; }
+
+        public int STUDENT_FID { get; set; }
 
        
     }

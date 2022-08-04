@@ -55,6 +55,7 @@ namespace ZeitPlan.Views.Admin
                 SECTION = x.Object.SECTION,
                 SHIFT = x.Object.SHIFT,
                 DEGREE_FID = x.Object.DEGREE_FID,
+                //STUDENT_FID=
               
 
             }).ToList();

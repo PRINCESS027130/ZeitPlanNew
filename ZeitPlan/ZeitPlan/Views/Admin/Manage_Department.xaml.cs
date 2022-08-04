@@ -52,9 +52,7 @@ namespace ZeitPlan.Views.Admin
             {
                 DEPARTMENT_ID = x.Object.DEPARTMENT_ID,
                 DEPARTMENT_NAME = x.Object.DEPARTMENT_NAME,
-               
-               
-
+              
             }).ToList();
         }
 

@@ -10,11 +10,17 @@ using Xamarin.Forms.Xaml;
 namespace ZeitPlan.Views.Admin
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Add_Course_Assign : ContentPage
+    public partial class TeacherAssign_Detail : ContentPage
     {
-        public Add_Course_Assign()
+        public TeacherAssign_Detail(TBL_TEACHER_ASSIGN t)
         {
             InitializeComponent();
+             lblTeacherAssignId.Text = t.TEACHER_ASSIGN_ID.ToString();
+            lblTeacherFID.Text = t.TEACHER_FID.ToString();
+            lblClassFID.Text = t.CLASS_FID.ToString();
+            
+
+
         }
     }
 }
