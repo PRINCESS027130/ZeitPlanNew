@@ -123,7 +123,16 @@ namespace ZeitPlan.Views.Admin
                     await DisplayAlert("ERROR", "Please fill the required field", "ok");
                     return;
                 }
-
+                if (ddlDepartment.SelectedItem == null)
+                {
+                    await DisplayAlert("ERROR", "Please select the Department", "ok");
+                    return;
+                }
+                if (ddlTeacherAssign.SelectedItem == null)
+                {
+                    await DisplayAlert("ERROR", "Please select the TeacherAssign", "ok");
+                    return;
+                }
                 // App.db.CreateTable<TBL_TEACHER>();
                 //  var check = App.db.Table<TBL_TEACHER>().FirstOrDefault(x => x.TEACHER_EMAIL == txtTeEmail.Text);
                 //if (check != null)

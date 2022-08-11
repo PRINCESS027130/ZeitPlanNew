@@ -9,6 +9,7 @@
             <Entry x:Name="txtCShift" Placeholder="Shift" Keyboard="Chat"/>
             <Picker Title="select Degree" x:Name="ddlDegree"/>
             <Picker Title="select ClassCourse" x:Name="ddlClassCourseAssign"/>
+            <Picker Title="select TeacherAssign" x:Name="ddlTeacherAssign"/>
             <!--<Picker Title="select Student" x:Name="ddlStudent"/>-->
 
             <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>

@@ -17,6 +17,7 @@ namespace ZeitPlan.Views.Admin
         public Add_ClassCourseAssign()
         {
             InitializeComponent();
+            LoadData();
         }
 
         async void LoadData()
@@ -46,7 +47,7 @@ namespace ZeitPlan.Views.Admin
         }
 
             private async void btnClassCourse_Clicked(object sender, EventArgs e)
-        {
+            {
             try
             {
 
@@ -123,6 +124,6 @@ namespace ZeitPlan.Views.Admin
                 await DisplayAlert("Error", "Somethimg went wrong,Please try again later\nError:" + ex.Message, "ok");
 
             }
-        }
+            }
     }
 }

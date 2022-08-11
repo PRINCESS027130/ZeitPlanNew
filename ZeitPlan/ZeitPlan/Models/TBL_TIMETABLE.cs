@@ -15,7 +15,7 @@
 
         public int ROOM_FID { get; set; }
 
-        public int COURSE_ASSIGN_FID { get; set; }
+        public int COURSE_FID { get; set; }
 
         
     }

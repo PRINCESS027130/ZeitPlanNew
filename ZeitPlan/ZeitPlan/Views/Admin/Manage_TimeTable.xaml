@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ZeitPlan.Views.Admin.Manage_ClassCourseAssign"
-             Title="Manage_ClassCourseAssign" >
+             x:Class="ZeitPlan.Views.Admin.Manage_TimeTable"
+             Title="Manage_TimeTable" >
     <ContentPage.Content>
         <StackLayout Padding="24">
             <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>
             <ListView x:Name="DataList" ItemTapped="DataList_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ImageCell Text="{Binding  CLASS_COURSEASSIGN_ID}" Detail="{Binding  CLASS_COURSEASSIGN_ID}" ImageSource="icon_feed.png"/>
+                        <ImageCell Text="{Binding COURSE_FID}" Detail="{Binding CLASS_FID}" ImageSource="icon_feed.png"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

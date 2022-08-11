@@ -105,7 +105,7 @@ namespace ZeitPlan.Views.Admin
                     CLASS_FID = x.Object.CLASS_FID
 
                 }).ToList();
-                int selected1 = cc[ddlClassCourseAssign.SelectedIndex].COURSE_FID;
+                int selected1 = cc[ddlClassCourseAssign.SelectedIndex].CLASS_COURSEASSIGN_ID;
 
 
                 TBL_COURSE co = new TBL_COURSE()

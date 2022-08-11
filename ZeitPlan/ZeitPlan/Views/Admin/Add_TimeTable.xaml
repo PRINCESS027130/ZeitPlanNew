@@ -4,12 +4,12 @@
              x:Class="ZeitPlan.Views.Admin.Add_TimeTable">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="txtTTeacherFID" Placeholder="Teacher FID" Keyboard="Numeric"/>
-            <Entry x:Name="txtTClassFID" Placeholder="Class FID" Keyboard="Numeric"/>
-            <Entry x:Name="txtTSlotFID" Placeholder="Slot FID" Keyboard="Numeric"/>
-            <Entry x:Name="txtTRoomFID" Placeholder="Room FID" Keyboard="Numeric"/>
-            <Entry x:Name="txtTCourse_AssignFID" Placeholder="Course_Assign FID" Keyboard="Numeric"/>
-            
+            <Picker Title="Select Class" x:Name="ddlClass"/>
+            <Picker Title="Select Course" x:Name="ddlCourse"/>
+            <Picker Title="Select Teacher" x:Name="ddlTeacher"/>
+            <!--<Picker Title="Select Slot" x:Name="ddlSlot"/>-->
+            <Picker Title="Select Room" x:Name="ddlRoom"/>
+            <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>
             <Button Text="Add TimeTable" x:Name="btnTimeTable" Clicked="btnTimeTable_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

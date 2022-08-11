@@ -49,8 +49,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Admin\TimeTable_Detail.xaml.cs">
+      <DependentUpon>TimeTable_Detail.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Admin\Class_Detail.xaml.cs">
       <DependentUpon>Class_Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Admin\Manage_TimeTable.xaml.cs">
+      <DependentUpon>Manage_TimeTable.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Admin\Manage_ClassCourseAssign.xaml.cs">
       <DependentUpon>Manage_ClassCourseAssign.xaml</DependentUpon>

@@ -40,8 +40,19 @@ namespace ZeitPlan.Views.Admin
             }).ToList();
             var refinedList1 = firebaseList1.Select(x => x.COURSE_FID).ToList();
              ddlClassCourseAssign.ItemsSource = refinedList1;
+
+            var firebaseList2 = (await App.firebaseDatabase.Child("TBL_TEACHER_ASSIGN").OnceAsync<TBL_TEACHER_ASSIGN>()).Select(x => new TBL_TEACHER_ASSIGN
+            {
+                TEACHER_ASSIGN_ID = x.Object.TEACHER_ASSIGN_ID,
+                TEACHER_FID = x.Object.TEACHER_FID,
+                CLASS_FID = x.Object.CLASS_FID
+
+            }).ToList();
+            var refinedList2 = firebaseList2.Select(x => x.TEACHER_ASSIGN_ID).ToList();
+            ddlTeacherAssign.ItemsSource = refinedList2;
+
         }
-      
+
 
 
         private async void btnClass_Clicked(object sender, EventArgs e)
@@ -63,6 +74,12 @@ namespace ZeitPlan.Views.Admin
                 if (ddlClassCourseAssign.SelectedItem == null)
                 {
                     await DisplayAlert("ERROR", "Please select the Class & Course", "ok");
+                    return;
+                }
+
+                if (ddlTeacherAssign.SelectedItem == null)
+                {
+                    await DisplayAlert("ERROR", "Please select the TeacherAssign", "ok");
                     return;
                 }
 
@@ -105,7 +122,18 @@ namespace ZeitPlan.Views.Admin
                     CLASS_FID = x.Object.CLASS_FID
 
                 }).ToList();
-                int selected1 = cc[ddlClassCourseAssign.SelectedIndex].COURSE_FID;
+                int selected1 = cc[ddlClassCourseAssign.SelectedIndex].CLASS_COURSEASSIGN_ID;
+
+                List<TBL_TEACHER_ASSIGN> tsn = (await App.firebaseDatabase.Child("TBL_TEACHER_ASSIGN").OnceAsync<TBL_TEACHER_ASSIGN>()).Select(x => new TBL_TEACHER_ASSIGN
+                {
+                    TEACHER_ASSIGN_ID = x.Object.TEACHER_ASSIGN_ID,
+                    TEACHER_FID = x.Object.TEACHER_FID,
+                    CLASS_FID = x.Object.CLASS_FID
+
+                }).ToList();
+                int selected2 = tsn[ddlTeacherAssign.SelectedIndex].TEACHER_ASSIGN_ID;
+
+
 
                 TBL_CLASS cl = new TBL_CLASS()
                 {
@@ -114,6 +142,8 @@ namespace ZeitPlan.Views.Admin
                     SECTION = txtCSection.Text,
                     SHIFT = txtCShift.Text,
                     DEGREE_FID = selected,
+                    CLASS_COURSE_FID=selected1,
+                    TEACHER_ASSIGN_FID=selected2
                    // STUDENT_FID=
        
                 };

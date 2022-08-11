@@ -40,6 +40,11 @@ namespace ZeitPlan.Views.Admin
                     await DisplayAlert("ERROR", "Please fill the required field", "ok");
                     return;
                 }
+                if (ddlDepartment.SelectedItem == null)
+                {
+                    await DisplayAlert("ERROR", "Please select the Department", "ok");
+                    return;
+                }
 
                 // App.db.CreateTable<TBL_ROOM>();
                 var check = (await App.firebaseDatabase.Child("TBL_ROOM").OnceAsync<TBL_ROOM>()).FirstOrDefault(x => x.Object.ROOM_NO == txtRoom_No.Text);
