@@ -17,7 +17,7 @@ namespace ZeitPlan.Views.Admin
             InitializeComponent();
              lblTeacherAssignId.Text = t.TEACHER_ASSIGN_ID.ToString();
             lblTeacherFID.Text = t.TEACHER_FID.ToString();
-            lblClassFID.Text = t.CLASS_FID.ToString();
+            lblCourseFID.Text = t.COURSE_FID.ToString();
             
 
 

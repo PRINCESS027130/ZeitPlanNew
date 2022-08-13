@@ -16,15 +16,36 @@ namespace ZeitPlan.Views.Teacher
         public Add_Student()
         {
             InitializeComponent();
+            LoadData();
+        }
+        async void LoadData()
+        {
+            var firebaseList = (await App.firebaseDatabase.Child("TBL_CLASS").OnceAsync<TBL_CLASS>()).Select(x => new TBL_CLASS
+            {
+                CLASS_ID = x.Object.CLASS_ID,
+                CLASS_NAME = x.Object.CLASS_NAME,
+                SESSION = x.Object.SESSION,
+                SECTION = x.Object.SECTION,
+                SHIFT = x.Object.SHIFT,
+                DEGREE_FID = x.Object.DEGREE_FID,
+
+            }).ToList();
+            var refinedList = firebaseList.Select(x => x.CLASS_NAME).ToList();
+            ddlClass.ItemsSource = refinedList;
         }
 
-        private async void btnStudent_Clicked(object sender, EventArgs e)
+            private async void btnStudent_Clicked(object sender, EventArgs e)
         {
             try
             {
                 if (string.IsNullOrEmpty(txtstdName.Text) || string.IsNullOrEmpty(txtstdEmail.Text) || string.IsNullOrEmpty(txtstdPassword.Text))
                 {
                     await DisplayAlert("ERROR", "Please fill the required field", "ok");
+                    return;
+                }
+                if (ddlClass.SelectedItem == null)
+                {
+                    await DisplayAlert("ERROR", "Please select the Class", "ok");
                     return;
                 }
 
@@ -45,6 +66,16 @@ namespace ZeitPlan.Views.Teacher
                     NewID = ++LastID;
                 }
 
+                List<TBL_CLASS> classes = (await App.firebaseDatabase.Child("TBL_CLASS").OnceAsync<TBL_CLASS>()).Select(x => new TBL_CLASS
+                {
+                    CLASS_ID = x.Object.CLASS_ID,
+                    SESSION = x.Object.SESSION,
+                    SECTION = x.Object.SECTION,
+                    SHIFT = x.Object.SHIFT,
+                    DEGREE_FID = x.Object.DEGREE_FID,
+
+                }).ToList();
+                int selected = classes[ddlClass.SelectedIndex].CLASS_ID;
 
                 TBL_STUDENT std = new TBL_STUDENT()
                 {

@@ -9,12 +9,12 @@
                 <Grid ColumnDefinitions="150*,400*" RowDefinitions="50,50,50">
                     <Label Grid.Row="1" Grid.Column="0"  BackgroundColor="#bd6513" Text="TeacherAssign Id:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                     <Label Grid.Row="2" Grid.Column="0"  BackgroundColor="#bd6513" Text="TeacherFID:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                    <Label Grid.Row="3" Grid.Column="0"  BackgroundColor="#bd6513" Text="ClassFID:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="3" Grid.Column="0"  BackgroundColor="#bd6513" Text="CourseFID:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                     
 
                     <Label Grid.Row="1" Grid.Column="1" x:Name="lblTeacherAssignId" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                     <Label Grid.Row="2" Grid.Column="1" x:Name="lblTeacherFID" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
-                    <Label Grid.Row="3" Grid.Column="1" x:Name="lblClassFID" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                    <Label Grid.Row="3" Grid.Column="1" x:Name="lblCourseFID" BackgroundColor="PowderBlue" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                     
                 </Grid>
             </ScrollView>

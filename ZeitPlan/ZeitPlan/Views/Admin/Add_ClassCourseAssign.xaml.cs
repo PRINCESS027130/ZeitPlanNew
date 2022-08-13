@@ -25,20 +25,21 @@ namespace ZeitPlan.Views.Admin
             var firebaseList = (await App.firebaseDatabase.Child("TBL_CLASS").OnceAsync<TBL_CLASS>()).Select(x => new TBL_CLASS
             {
                 CLASS_ID = x.Object.CLASS_ID,
+                CLASS_NAME=x.Object.CLASS_NAME,
                 SESSION = x.Object.SESSION,
                 SECTION = x.Object.SECTION,
                 SHIFT = x.Object.SHIFT,
                 DEGREE_FID = x.Object.DEGREE_FID,
 
             }).ToList();
-            var refinedList = firebaseList.Select(x => x.SESSION).ToList();
+            var refinedList = firebaseList.Select(x => x.CLASS_NAME).ToList();
             ddlClass.ItemsSource = refinedList;
             var firebaseList1 = (await App.firebaseDatabase.Child("TBL_COURSE").OnceAsync<TBL_COURSE>()).Select(x => new TBL_COURSE
             {
                 COURSE_ID = x.Object.COURSE_ID,
                 COURSE_NAME = x.Object.COURSE_NAME,
                 CREDIT_HOURS = x.Object.CREDIT_HOURS,
-                TEACHER_FID = x.Object.TEACHER_FID
+                //TEACHER_FID = x.Object.TEACHER_FID
 
             }).ToList();
             var refinedList1 = firebaseList1.Select(x => x.COURSE_NAME).ToList();
@@ -81,7 +82,8 @@ namespace ZeitPlan.Views.Admin
               List<TBL_CLASS> classes = (await App.firebaseDatabase.Child("TBL_CLASS").OnceAsync<TBL_CLASS>()).Select(x => new TBL_CLASS
               {
                  CLASS_ID = x.Object.CLASS_ID,
-                 SESSION = x.Object.SESSION,
+                  CLASS_NAME = x.Object.CLASS_NAME,
+                  SESSION = x.Object.SESSION,
                  SECTION = x.Object.SECTION,
                  SHIFT = x.Object.SHIFT,
                  DEGREE_FID = x.Object.DEGREE_FID,
@@ -94,7 +96,7 @@ namespace ZeitPlan.Views.Admin
                     COURSE_ID = x.Object.COURSE_ID,
                     COURSE_NAME = x.Object.COURSE_NAME,
                     CREDIT_HOURS = x.Object.CREDIT_HOURS,
-                    TEACHER_FID = x.Object.TEACHER_FID
+                    //TEACHER_FID = x.Object.TEACHER_FID
 
                 }).ToList();
                 int selected1 = Course[ddlCourse.SelectedIndex].COURSE_ID;

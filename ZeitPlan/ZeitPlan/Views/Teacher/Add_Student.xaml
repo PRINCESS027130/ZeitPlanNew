@@ -7,7 +7,7 @@
             <Entry x:Name="txtstdName" Placeholder="Student Name" Keyboard="Chat"/>
             <Entry x:Name="txtstdEmail" Placeholder="Student Email" Keyboard="Email"/>
             <Entry x:Name="txtstdPassword" Placeholder="Student password" IsPassword="True"/>
-            
+            <Picker Title="Select Class" x:Name="ddlClass"/>
             <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>
             <Button Text="Add Student" x:Name="btnStudent" Clicked="btnStudent_Clicked"/>
         </StackLayout>

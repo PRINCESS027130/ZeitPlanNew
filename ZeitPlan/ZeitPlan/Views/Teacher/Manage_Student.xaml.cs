@@ -54,6 +54,7 @@ namespace ZeitPlan.Views.Teacher
                 STUDENT_NAME = x.Object.STUDENT_NAME,
                 STUDENT_EMAIL = x.Object.STUDENT_EMAIL,
                 STUDENT_PASSWORD = x.Object.STUDENT_PASSWORD,
+                CLASS_FID=x.Object.CLASS_FID,
                
             }).ToList();
         }

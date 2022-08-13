@@ -1,16 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ZeitPlan.Views.Admin.Add_Class">
+             x:Class="ZeitPlan.Views.Admin.Edit_Class">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="txtCName" Placeholder="Name" Keyboard="Chat"/>
             <Entry x:Name="txtCSession" Placeholder="Session" Keyboard="Numeric"/>
             <Entry x:Name="txtCSection" Placeholder="Section" Keyboard="Chat"/>
             <Entry x:Name="txtCShift" Placeholder="Shift" Keyboard="Chat"/>
             <Picker Title="select Degree" x:Name="ddlDegree"/>
-            <!--<Picker Title="select ClassCourse" x:Name="ddlClassCourseAssign"/>
-            <Picker Title="select TeacherAssign" x:Name="ddlTeacherAssign"/>-->
+            <Picker Title="select ClassCourse" x:Name="ddlClassCourseAssign"/>
+            <Picker Title="select TeacherAssign" x:Name="ddlTeacherAssign"/>
             <!--<Picker Title="select Student" x:Name="ddlStudent"/>-->
 
             <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>

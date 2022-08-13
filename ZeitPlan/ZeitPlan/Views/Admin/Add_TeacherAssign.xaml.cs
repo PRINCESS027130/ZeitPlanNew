@@ -35,17 +35,15 @@ namespace ZeitPlan.Views.Admin
             var refinedList = firebaseList.Select(x => x.TEACHER_NAME).ToList();
             ddlTeacher.ItemsSource = refinedList;
 
-            var firebaseList1 = (await App.firebaseDatabase.Child("TBL_CLASS").OnceAsync<TBL_CLASS>()).Select(x => new TBL_CLASS
+            var firebaseList1 = (await App.firebaseDatabase.Child("TBL_COURSE").OnceAsync<TBL_COURSE>()).Select(x => new TBL_COURSE
             {
-                CLASS_ID = x.Object.CLASS_ID,
-                SESSION = x.Object.SESSION,
-                SECTION = x.Object.SECTION,
-                SHIFT = x.Object.SHIFT,
-                DEGREE_FID = x.Object.DEGREE_FID,
+                COURSE_ID = x.Object.COURSE_ID,
+                COURSE_NAME = x.Object.COURSE_NAME,
+                CREDIT_HOURS = x.Object.CREDIT_HOURS,
 
             }).ToList();
-            var refinedList1 = firebaseList1.Select(x => x.SESSION).ToList();
-            ddlClass.ItemsSource = refinedList1;
+            var refinedList1 = firebaseList1.Select(x => x.COURSE_NAME).ToList();
+            ddlCourse.ItemsSource = refinedList1;
 
 
         }
@@ -63,17 +61,17 @@ namespace ZeitPlan.Views.Admin
                     return;
                 }
 
-                if (ddlClass.SelectedItem == null)
+                if (ddlCourse.SelectedItem == null)
                 {
                     await DisplayAlert("ERROR", "Please select the Class", "ok");
                     return;
                 }
-                var check = (await App.firebaseDatabase.Child("TBL_TEACHER_ASSIGN").OnceAsync<TBL_TEACHER_ASSIGN>());
-                if (check != null)
-                {
-                    await DisplayAlert("ERROR", "Teacher and Student  is  already added", "ok");
-                    return;
-                }
+                //var check = (await App.firebaseDatabase.Child("TBL_TEACHER_ASSIGN").OnceAsync<TBL_TEACHER_ASSIGN>());
+                //if (check != null)
+                //{
+                //    await DisplayAlert("ERROR", "Teacher and Student  is  already added", "ok");
+                //    return;
+                //}
                 LoadingInd.IsRunning = true;
                 int LastID, NewID = 1;
 
@@ -98,16 +96,13 @@ namespace ZeitPlan.Views.Admin
                 }).ToList();
                 int selected = teacher[ddlTeacher.SelectedIndex].TEACHER_ID;
 
-                List<TBL_CLASS> classes = (await App.firebaseDatabase.Child("TBL_CLASS").OnceAsync<TBL_CLASS>()).Select(x => new TBL_CLASS
+                List<TBL_COURSE> co = (await App.firebaseDatabase.Child("TBL_COURSE").OnceAsync<TBL_COURSE>()).Select(x => new TBL_COURSE
                 {
-                    CLASS_ID = x.Object.CLASS_ID,
-                    SESSION = x.Object.SESSION,
-                    SECTION = x.Object.SECTION,
-                    SHIFT = x.Object.SHIFT,
-                    DEGREE_FID = x.Object.DEGREE_FID,
-                 
+                    COURSE_ID = x.Object.COURSE_ID,
+                    COURSE_NAME = x.Object.COURSE_NAME,
+                    CREDIT_HOURS = x.Object.CREDIT_HOURS,
                 }).ToList();
-                 int selected1 = classes[ddlClass.SelectedIndex].CLASS_ID;
+                 int selected1 = co[ddlCourse.SelectedIndex].COURSE_ID;
 
 
                
@@ -116,7 +111,7 @@ namespace ZeitPlan.Views.Admin
                 {
                     TEACHER_ASSIGN_ID = NewID,
                     TEACHER_FID= selected,
-                    CLASS_FID= selected1
+                    COURSE_FID= selected1
 
                  };
 

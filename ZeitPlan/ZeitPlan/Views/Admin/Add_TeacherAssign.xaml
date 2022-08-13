@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Picker Title="Select Teacher" x:Name="ddlTeacher"/>
-            <Picker Title="Select Class" x:Name="ddlClass"/>
+            <Picker Title="Select Course" x:Name="ddlCourse"/>
             <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>
             <Button Text="Add TeacherAssign" x:Name="btnTeacherAssign" Clicked="btnTeacherAssign_Clicked"/>
         </StackLayout>

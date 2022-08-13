@@ -10,7 +10,7 @@
 
         public int TEACHER_FID { get; set; }
 
-        public int CLASS_FID { get; set; }
+        public int COURSE_FID { get; set; }
 
         
     }

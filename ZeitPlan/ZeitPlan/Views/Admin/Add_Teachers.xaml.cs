@@ -35,15 +35,15 @@ namespace ZeitPlan.Views.Admin
             var refinedList = firebaseList.Select(x => x.DEPARTMENT_NAME).ToList();
             ddlDepartment.ItemsSource = refinedList;
 
-            var firebaseList1 = (await App.firebaseDatabase.Child("TBL_TEACHER_ASSIGN").OnceAsync<TBL_TEACHER_ASSIGN>()).Select(x => new TBL_TEACHER_ASSIGN
-            {
-                TEACHER_ASSIGN_ID = x.Object.TEACHER_ASSIGN_ID,
-                TEACHER_FID = x.Object.TEACHER_FID,
-                CLASS_FID = x.Object.CLASS_FID
+           // var firebaseList1 = (await App.firebaseDatabase.Child("TBL_TEACHER_ASSIGN").OnceAsync<TBL_TEACHER_ASSIGN>()).Select(x => new TBL_TEACHER_ASSIGN
+           // {
+           //     TEACHER_ASSIGN_ID = x.Object.TEACHER_ASSIGN_ID,
+           //     TEACHER_FID = x.Object.TEACHER_FID,
+           //     CLASS_FID = x.Object.CLASS_FID
 
-            }).ToList();
-            var refinedList1 = firebaseList1.Select(x => x.TEACHER_ASSIGN_ID).ToList();
-           ddlTeacherAssign.ItemsSource = refinedList1;
+           // }).ToList();
+           // var refinedList1 = firebaseList1.Select(x => x.TEACHER_ASSIGN_ID).ToList();
+           //ddlTeacherAssign.ItemsSource = refinedList1;
 
         }
 
@@ -128,11 +128,11 @@ namespace ZeitPlan.Views.Admin
                     await DisplayAlert("ERROR", "Please select the Department", "ok");
                     return;
                 }
-                if (ddlTeacherAssign.SelectedItem == null)
-                {
-                    await DisplayAlert("ERROR", "Please select the TeacherAssign", "ok");
-                    return;
-                }
+                //if (ddlTeacherAssign.SelectedItem == null)
+                //{
+                //    await DisplayAlert("ERROR", "Please select the TeacherAssign", "ok");
+                //    return;
+                //}
                 // App.db.CreateTable<TBL_TEACHER>();
                 //  var check = App.db.Table<TBL_TEACHER>().FirstOrDefault(x => x.TEACHER_EMAIL == txtTeEmail.Text);
                 //if (check != null)
@@ -163,14 +163,14 @@ namespace ZeitPlan.Views.Admin
                 }).ToList();
                 int selected = dept[ddlDepartment.SelectedIndex].DEPARTMENT_ID;
 
-                List<TBL_TEACHER_ASSIGN> tsn = (await App.firebaseDatabase.Child("TBL_TEACHER_ASSIGN").OnceAsync<TBL_TEACHER_ASSIGN>()).Select(x => new TBL_TEACHER_ASSIGN
-                {
-                    TEACHER_ASSIGN_ID = x.Object.TEACHER_ASSIGN_ID,
-                    TEACHER_FID = x.Object.TEACHER_FID,
-                    CLASS_FID = x.Object.CLASS_FID
+                //List<TBL_TEACHER_ASSIGN> tsn = (await App.firebaseDatabase.Child("TBL_TEACHER_ASSIGN").OnceAsync<TBL_TEACHER_ASSIGN>()).Select(x => new TBL_TEACHER_ASSIGN
+                //{
+                //    TEACHER_ASSIGN_ID = x.Object.TEACHER_ASSIGN_ID,
+                //    TEACHER_FID = x.Object.TEACHER_FID,
+                //    CLASS_FID = x.Object.CLASS_FID
 
-                }).ToList();
-                int selected1 = tsn[ddlTeacherAssign.SelectedIndex].TEACHER_ASSIGN_ID;
+                //}).ToList();
+                //int selected1 = tsn[ddlTeacherAssign.SelectedIndex].TEACHER_ASSIGN_ID;
 
                 var StoredImageURL = await App.FirebaseStorage
                             .Child("TEACHER_IMAGE")
@@ -187,7 +187,7 @@ namespace ZeitPlan.Views.Admin
                     TEACHER_PHNO = txtTePhone.Text,
                     TEACHER_ADDRESS = txtTeAddress.Text,
                     DEPARTMENT_FID=selected,
-                    TEACHER_ASSIGN_FID=selected1,
+                    //TEACHER_ASSIGN_FID=selected1,
                    TEACHER_IMAGE= StoredImageURL,
                 };
 

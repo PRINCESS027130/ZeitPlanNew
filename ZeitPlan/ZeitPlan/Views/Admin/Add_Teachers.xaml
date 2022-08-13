@@ -18,7 +18,7 @@
             <Entry x:Name="txtTePassword" Placeholder="Teacher Password" IsPassword="True"/>
             <Entry x:Name="txtTeAddress" Placeholder="Teacher Address" Keyboard="Chat"/>
                 <Picker Title="Select Department" x:Name="ddlDepartment"/>
-                <Picker Title="Select TeacherAssign" x:Name="ddlTeacherAssign"/>
+                <!--<Picker Title="Select TeacherAssign" x:Name="ddlTeacherAssign"/>-->
                 <ActivityIndicator x:Name="LoadingInd" IsRunning="False"/>
             <Button Text="Add Teacher" x:Name="btnTeacher" Clicked="btnTeacher_Clicked"/>
         </StackLayout>

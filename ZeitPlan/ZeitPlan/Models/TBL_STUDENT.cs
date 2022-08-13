@@ -13,6 +13,7 @@
         public string STUDENT_EMAIL { get; set; }
 
         public string STUDENT_PASSWORD { get; set; }
+        public int CLASS_FID { get; set; }
 
 
        

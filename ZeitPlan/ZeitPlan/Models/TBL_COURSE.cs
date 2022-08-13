@@ -13,8 +13,8 @@
 
         public string CREDIT_HOURS { get; set; }
 
-        public int TEACHER_FID { get; set; }
-        public int CLASS_COURSE_FID { get; set; }
+        //public int TEACHER_FID { get; set; }
+        //public int CLASS_COURSE_FID { get; set; }
 
     }
 

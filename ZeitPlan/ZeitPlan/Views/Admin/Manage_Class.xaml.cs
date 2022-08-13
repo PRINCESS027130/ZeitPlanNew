@@ -51,6 +51,7 @@ namespace ZeitPlan.Views.Admin
             DataList.ItemsSource = (await App.firebaseDatabase.Child("TBL_CLASS").OnceAsync<TBL_CLASS>()).Select(x => new TBL_CLASS
             {
                 CLASS_ID = x.Object.CLASS_ID,
+                CLASS_NAME=x.Object.CLASS_NAME,
                 SESSION = x.Object.SESSION,
                 SECTION = x.Object.SECTION,
                 SHIFT = x.Object.SHIFT,
@@ -89,7 +90,14 @@ namespace ZeitPlan.Views.Admin
                     LoadData();
                     await DisplayAlert("Confirmation", "Deleted Permanantly  " + item.Object.SESSION, "Ok");
                 }
+
+            }
+            if (choice == "Edit")
+            {
+                
+                await Navigation.PushAsync(new Edit_Class(selected));
             }
         }
+
     }
 }

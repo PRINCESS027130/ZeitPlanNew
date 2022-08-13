@@ -52,7 +52,7 @@ namespace ZeitPlan.Views.Admin
             {
                TEACHER_ASSIGN_ID=x.Object.TEACHER_ASSIGN_ID,
                TEACHER_FID=x.Object.TEACHER_FID,
-               CLASS_FID=x.Object.CLASS_FID
+               COURSE_FID=x.Object.COURSE_FID
                
             }).ToList();
         }

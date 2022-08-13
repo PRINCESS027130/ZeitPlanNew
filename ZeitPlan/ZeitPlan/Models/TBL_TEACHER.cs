@@ -21,7 +21,7 @@
 
         public int DEPARTMENT_FID { get; set; }
 
-        public int TEACHER_ASSIGN_FID{ get; set; }
+        //public int TEACHER_ASSIGN_FID{ get; set; }
        
 
        
