@@ -90,7 +90,7 @@ namespace ZeitPlan.Views.Admin
                 //}
 
                 //  App.db.CreateTable<TBL_CLASS>();
-                var check = (await App.firebaseDatabase.Child("TBL_CLASS").OnceAsync<TBL_CLASS>()).FirstOrDefault(x => x.Object.SESSION ==txtCSession.Text);
+                var check = (await App.firebaseDatabase.Child("TBL_CLASS").OnceAsync<TBL_CLASS>()).FirstOrDefault(x => x.Object.CLASS_NAME ==txtCName.Text);
                 if (check != null)
                 {
                     await DisplayAlert("ERROR", "Class is  already added", "ok");

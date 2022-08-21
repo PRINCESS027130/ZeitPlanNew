@@ -26,7 +26,7 @@ namespace ZeitPlan
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new SplashScreen();
+            MainPage = new StartPage();
         }
 
         protected override void OnStart()

@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ZeitPlan.Views.Admin.Class_Detail"
+             x:Class="ZeitPlan.Views.Admin.Class_Detail2"
              Title="Class Detail">
     <ContentPage.Content>
         <StackLayout>
             <ScrollView>
-                <Grid ColumnDefinitions="150*,400*" RowDefinitions="50">
+                <Grid BackgroundColor="Red" ColumnDefinitions="150*,400*" RowDefinitions="*">
                     <Label Grid.Row="1" Grid.Column="0"  BackgroundColor="#bd6513" Text="Class Id:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                     <Label Grid.Row="2" Grid.Column="0"  BackgroundColor="#bd6513" Text="Class Name:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                     <Label Grid.Row="3" Grid.Column="0"  BackgroundColor="#bd6513" Text="SESSION:" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>

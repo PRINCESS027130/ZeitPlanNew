@@ -96,12 +96,12 @@ namespace ZeitPlan.Views.Admin
                     return;
                 }
 
-                var check = (await App.firebaseDatabase.Child("TBL_TIMETABLE").OnceAsync<TBL_TIMETABLE>());
-                if (check != null)
-                {
-                    await DisplayAlert("ERROR", "This TimeTable  is  already added", "ok");
-                    return;
-                }
+                //var check = (await App.firebaseDatabase.Child("TBL_TIMETABLE").OnceAsync<TBL_TIMETABLE>());
+                //if (check != null)
+                //{
+                //    await DisplayAlert("ERROR", "This TimeTable  is  already added", "ok");
+                //    return;
+                //}
                 LoadingInd.IsRunning = true;
                 int LastID, NewID = 1;
 

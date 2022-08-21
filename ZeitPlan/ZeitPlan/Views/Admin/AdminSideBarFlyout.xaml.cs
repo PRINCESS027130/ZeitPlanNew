@@ -45,7 +45,7 @@ namespace ZeitPlan.Views.Admin
                     new AdminSideBarFlyoutMenuItem { Id = 4,Icon="icon_feed.png", Title = "Manage Class",TargetType=typeof(Manage_Class) },
                     new AdminSideBarFlyoutMenuItem { Id = 4,Icon="icon_feed.png", Title = "Add Course",TargetType=typeof(Add_Course) },
                     new AdminSideBarFlyoutMenuItem { Id = 4,Icon="icon_feed.png", Title = "Manage Course",TargetType=typeof(Manage_Course) },
-                    new AdminSideBarFlyoutMenuItem { Id = 4,Icon="icon_feed.png", Title = "Add ClassCourseAssign",TargetType=typeof(Add_ClassCourseAssign) },
+                    new AdminSideBarFlyoutMenuItem { Id = 4,Icon="icon_feed.png", Title = "Assign Course to Class",TargetType=typeof(Assign_Course_to_Class) },
                     new AdminSideBarFlyoutMenuItem { Id = 4,Icon="icon_feed.png", Title = "Manage ClassCourseAssign",TargetType=typeof(Manage_ClassCourseAssign) },
 
                     new AdminSideBarFlyoutMenuItem { Id = 4,Icon="icon_feed.png", Title = "Add Room",TargetType=typeof(Add_Room) },

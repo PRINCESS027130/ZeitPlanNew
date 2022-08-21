@@ -77,7 +77,7 @@ namespace ZeitPlan.Views.Admin
                 if (q)
                 {
                     //Delete Single Record =========================================================
-                    await App.firebaseDatabase.Child("TBL_DEGREE").Child(item.Key).DeleteAsync();
+                    await App.firebaseDatabase.Child("TBL_DEPARTMENT").Child(item.Key).DeleteAsync();
 
                     //App.db.Delete(item);
                     // DataList.ItemsSource = App.db.Table<user>().ToList();

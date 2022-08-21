@@ -12,9 +12,9 @@ using ZeitPlan.Models;
 namespace ZeitPlan.Views.Admin
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Add_ClassCourseAssign : ContentPage
+    public partial class Assign_Course_to_Class : ContentPage
     {
-        public Add_ClassCourseAssign()
+        public Assign_Course_to_Class()
         {
             InitializeComponent();
             LoadData();
@@ -63,12 +63,12 @@ namespace ZeitPlan.Views.Admin
                     await DisplayAlert("ERROR", "Please select the Course", "ok");
                     return;
                 }
-                var check = (await App.firebaseDatabase.Child("TBL_CLASS_COURSEASSIGN").OnceAsync<TBL_CLASS_COURSEASSIGN>());
-                if (check != null)
-                {
-                    await DisplayAlert("ERROR", "Class and Course  is  already added", "ok");
-                    return;
-                }
+                //var check = (await App.firebaseDatabase.Child("TBL_CLASS_COURSEASSIGN").OnceAsync<TBL_CLASS_COURSEASSIGN>());
+                //if (check != null)
+                //{
+                //    await DisplayAlert("ERROR", "Class and Course  is  already added", "ok");
+                //    return;
+                //}
                 LoadingInd.IsRunning = true;
                 int LastID, NewID = 1;
 
